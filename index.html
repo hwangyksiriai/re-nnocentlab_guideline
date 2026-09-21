@@ -205,6 +205,23 @@
   }
   .warn-inline{color:#b3552f;font-weight:600;font-size:13px;}
 
+  /* ---------- PRODUCT PHOTOS ---------- */
+  .product-photos{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;
+    margin-top:20px;
+  }
+  .product-photos img{
+    width:100%;aspect-ratio:3/4;object-fit:cover;
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    background:#fff;
+  }
+  .photo-note{
+    text-align:center;font-size:12.5px;color:var(--ink-soft);
+    margin-top:10px;font-weight:600;
+  }
+
   /* ---------- PRODUCT CARDS ---------- */
   .product-grid{
     display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px;
@@ -535,6 +552,12 @@
       <h2 class="section-title">클렌징 부스터란?</h2>
       <p class="section-desc">평소 사용하는 클렌저에 1~2톡 더해 함께 사용하는 파우더 타입 클렌징 부스터입니다. 클렌저를 대체하는 파우더가 아니므로 기존 클렌저를 바꾸실 필요가 없습니다. 폼·젤·크림 등 클렌저 종류와 관계없이 함께 사용할 수 있으며, 오늘의 피부 컨디션에 맞춰 2 SKU 중 한 종류를 선택해 사용합니다.</p>
     </div>
+
+    <div class="product-photos">
+      <img src="product-1.png" alt="리노센트랩 클렌징 부스터 제품 이미지 1">
+      <img src="product-2.png" alt="리노센트랩 클렌징 부스터 제품 이미지 2">
+    </div>
+    <p class="photo-note">※ 두 제품 중 하나가 랜덤으로 발송됩니다.</p>
 
     <div class="product-grid">
       <div class="product-card">
