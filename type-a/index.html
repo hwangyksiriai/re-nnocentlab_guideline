@@ -1268,6 +1268,19 @@
   var FEE_TIER = "5";
 
   (function(){
+  function normalizeInstagramLink(raw){
+      var v = (raw || '').trim();
+      if(!v) return v;
+      v = v.replace(/^https?:\/\//i, '');
+      v = v.replace(/^www\./i, '');
+      v = v.replace(/^instagram\.com\//i, '');
+      v = v.replace(/^@/, '');
+      v = v.split('?')[0];
+      v = v.replace(/\/+$/, '');
+      if(!v) return raw.trim();
+      return 'https://instagram.com/' + v;
+    }
+
     var weekBtns = document.querySelectorAll('.week-btn');
     var selectedWeek = weekBtns.length ? weekBtns[0].getAttribute('data-week') : '';
     weekBtns.forEach(function(btn){
@@ -1325,7 +1338,7 @@
         guideType: GUIDE_TYPE_LABEL,
         feeTier: FEE_TIER,
         week: selectedWeek,
-        name: name, insta: insta, phone: phone, email: email,
+        name: name, insta: normalizeInstagramLink(insta), phone: phone, email: email,
         zip: zip, addr: addr, addr2: addr2, note: note
       };
 

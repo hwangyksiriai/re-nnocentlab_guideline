@@ -4,35 +4,55 @@
  * 연결 대상 스프레드시트:
  * https://docs.google.com/spreadsheets/d/1G9jSkHvkb1bbCF7WjW002bVNFDv-gORrHluQ_EnzHYY/edit
  *
- * 설치 방법
- * 1) 위 스프레드시트를 열고 상단 메뉴 [확장 프로그램] > [Apps Script] 클릭
- * 2) 기본으로 열린 Code.gs 내용을 전부 지우고 이 파일 내용을 붙여넣기
- * 3) 저장(Ctrl+S) 후 상단 [배포] > [새 배포] 클릭
- * 4) 유형 선택(톱니바퀴 아이콘)에서 "웹 앱" 선택
- *    - 설명: 아무 이름(예: rennocent-apply)
- *    - 다음 사용자로 실행: 나
- *    - 액세스 권한이 있는 사용자: 모든 사용자
- * 5) [배포] 클릭 -> 권한 승인(본인 계정으로 허용) -> 발급된 "웹 앱 URL"(...../exec) 복사
- * 6) 각 index.html 파일의 <script> 안에 있는
- *      var APPLY_ENDPOINT = "";
- *    이 부분에 복사한 URL을 붙여넣기 (type-a ~ type-g 총 7개 파일)
+ * [기존 코드 대비 수정 사항]
+ * - 한글이 깨져 들어가는 문제 수정: e.postData.contents 대신
+ *   e.postData.getDataAsString('UTF-8')로 명시적으로 UTF-8 디코딩하도록 변경
+ * - setupHeaders() 함수 추가: 실행 한 번으로 시트1 1행에 헤더를 넣어줌
+ * - doPost 실행 시 시트가 완전히 비어있으면 헤더를 자동으로 먼저 넣도록 처리
  *
- * 스프레드시트 "시트1"의 헤더(1행)를 아래 순서로 미리 넣어두는 것을 권장합니다.
- * 접수시각 | 타입구분 | 고료구분 | 주차선택 | 이름 | 인스타그램 | 휴대폰 | 이메일 | 우편번호 | 주소 | 상세주소 | 요청사항
- *
- * 코드를 수정한 뒤에는 반드시 [배포] > [배포 관리] > 연필 아이콘 > [새 버전]으로
- * 다시 배포해야 실제 웹 앱에 반영됩니다. (저장만으로는 반영되지 않습니다)
+ * 설치 / 재설치 방법
+ * 1) 스프레드시트를 열고 상단 메뉴 [확장 프로그램] > [Apps Script] 클릭
+ * 2) 기존 Code.gs 내용을 전부 지우고 이 파일 내용 전체를 붙여넣기 후 저장(Ctrl+S)
+ * 3) 상단 함수 선택 드롭다운에서 "setupHeaders" 선택 후 ▶ 실행
+ *    - 처음 실행 시 권한 승인 창이 뜨면 본인 계정으로 허용
+ *    - 실행 후 시트1 1행에 헤더가 채워짐
+ * 4) [배포] > [배포 관리] 클릭 -> 기존 배포 옆 연필(수정) 아이콘 클릭
+ *    -> 버전: "새 버전" 선택 -> [배포] 클릭
+ *    (※ "새 배포"가 아니라 반드시 기존 배포를 "수정"해야 웹 앱 URL이 그대로 유지됩니다)
+ * 5) URL은 그대로이므로 index.html 파일들의 APPLY_ENDPOINT는 다시 바꿀 필요 없음
  */
 
 var SPREADSHEET_ID = "1G9jSkHvkb1bbCF7WjW002bVNFDv-gORrHluQ_EnzHYY";
 var SHEET_NAME = "시트1";
 
+var HEADERS = [
+  "접수시각", "타입구분", "고료구분", "주차선택",
+  "이름", "인스타그램", "휴대폰", "이메일",
+  "우편번호", "주소", "상세주소", "요청사항"
+];
+
+// Apps Script 편집기에서 이 함수를 한 번 실행하면 시트1 1행에 헤더가 채워집니다.
+function setupHeaders() {
+  var ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+  var sheet = ss.getSheetByName(SHEET_NAME) || ss.getSheets()[0];
+  sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
+  sheet.setFrozenRows(1);
+}
+
 function doPost(e) {
   try {
-    var data = JSON.parse(e.postData.contents);
+    // e.postData.contents 대신 getDataAsString('UTF-8')을 사용해야
+    // 한글/이모지 등 멀티바이트 문자가 깨지지 않습니다.
+    var rawBody = e.postData.getDataAsString("UTF-8");
+    var data = JSON.parse(rawBody);
 
     var ss = SpreadsheetApp.openById(SPREADSHEET_ID);
     var sheet = ss.getSheetByName(SHEET_NAME) || ss.getSheets()[0];
+
+    if (sheet.getLastRow() === 0) {
+      sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
+      sheet.setFrozenRows(1);
+    }
 
     sheet.appendRow([
       new Date(),
