@@ -560,6 +560,26 @@
   }
   .apply-msg.error{color:#a2402a;}
   .apply-msg.success{color:var(--sage-dark);}
+
+  /* ---------- SETTLEMENT ---------- */
+  .settle-block{margin-bottom:20px;}
+  .settle-tag{
+    display:inline-block;font-size:12px;font-weight:800;color:var(--ink);
+    background:var(--sage-light);padding:6px 12px;border-radius:8px;margin-bottom:10px;
+  }
+  .settle-text{font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.6;}
+  .copy-row{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    background:var(--paper);border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;box-shadow:var(--shadow);
+  }
+  .copy-value{font-size:14px;color:var(--ink);word-break:break-all;}
+  .copy-btn{
+    flex:none;padding:9px 16px;border:none;border-radius:10px;
+    background:var(--sage-dark);color:#fff;font-weight:700;font-size:13px;
+    cursor:pointer;font-family:inherit;transition:background .15s;
+  }
+  .copy-btn.copied{background:var(--sage);}
 </style>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
@@ -584,6 +604,7 @@
     <a href="#process">진행 절차</a>
     <a href="#checklist">체크리스트</a>
     <a href="#apply">캠페인 신청</a>
+    <a href="#settlement">정산</a>
   </div>
 </nav>
 
@@ -1125,6 +1146,44 @@
   </div>
 </section>
 
+
+<!-- SETTLEMENT -->
+<section id="settlement">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">SETTLEMENT</div>
+      <h2 class="section-title">정산</h2>
+      <p class="section-desc">캠페인 선정 완료 후 정산을 위한 서류 및 연락처를 누락 없이 제출해 주세요.<br>정산은 정산 자료 제출 후 2주 이내 지급됩니다.</p>
+    </div>
+
+    <div class="settle-block">
+      <span class="settle-tag">제출 서류</span>
+      <p class="settle-text">— 성함, 연락처, 신분증 사본 (뒷자리 포함), 통장 사본</p>
+    </div>
+
+    <div class="settle-block">
+      <span class="settle-tag">수신 이메일</span>
+      <div class="copy-row">
+        <span class="copy-value" id="settle-email">hwangyksiriai@gmail.com</span>
+        <button type="button" class="copy-btn" data-copy-target="settle-email">복사</button>
+      </div>
+    </div>
+
+    <div class="settle-block">
+      <span class="settle-tag">메일 제목</span>
+      <div class="copy-row">
+        <span class="copy-value" id="settle-subject">리노센트랩 _이름_@인스타핸들</span>
+        <button type="button" class="copy-btn" data-copy-target="settle-subject">복사</button>
+      </div>
+    </div>
+
+    <div class="notice-box">
+      ! 정산 자료는 브랜드로부터 확인 안내를 받은 인플루언서에 한해서 제출해 주세요.<br>
+      ! 확정 안내를 받지 못한 경우 서류를 제출하지 마세요.
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="slogan">다시, 무해하게</div>
   <div class="eng">Re:Nnocent Lab</div>
@@ -1309,6 +1368,44 @@
         msg.textContent = '제출 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.';
       });
     });
+  })();
+</script>
+
+<script>
+  // ---------- SETTLEMENT COPY BUTTONS ----------
+  (function(){
+    document.querySelectorAll('.copy-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var targetId = btn.getAttribute('data-copy-target');
+        var text = document.getElementById(targetId).textContent;
+        var done = function(){
+          var original = btn.textContent;
+          btn.textContent = '복사됨';
+          btn.classList.add('copied');
+          setTimeout(function(){
+            btn.textContent = original;
+            btn.classList.remove('copied');
+          }, 1500);
+        };
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(text).then(done).catch(function(){
+            fallbackCopy(text); done();
+          });
+        } else {
+          fallbackCopy(text); done();
+        }
+      });
+    });
+    function fallbackCopy(text){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus(); ta.select();
+      try{ document.execCommand('copy'); }catch(e){}
+      document.body.removeChild(ta);
+    }
   })();
 </script>
 </body>
