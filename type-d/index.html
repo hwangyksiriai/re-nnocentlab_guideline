@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>리노센트랩 클렌징 부스터 | D Type 크리에이터 콘텐츠 가이드</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+<style>
+  :root{
+    --sage:#5c7a63;
+    --sage-dark:#3c5442;
+    --sage-light:#e9efe6;
+    --cream:#faf8f3;
+    --paper:#ffffff;
+    --ink:#1f2a22;
+    --ink-soft:#5a6b5e;
+    --line:#e2e2d8;
+    --amber:#f6ead2;
+    --amber-line:#e8d3a6;
+    --rose:#f6e4e0;
+    --rose-line:#e7c3ba;
+    --radius:18px;
+    --shadow:0 8px 30px rgba(31,42,34,0.07);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Pretendard", -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.65;
+    letter-spacing:-0.01em;
+    word-break:keep-all;
+    overflow-wrap:break-word;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px;}
+
+  @media(max-width:480px){
+    .wrap{padding:0 16px;}
+    section{padding:40px 0;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      linear-gradient(160deg, rgba(60,84,66,0.82) 0%, rgba(92,122,99,0.78) 65%, rgba(111,143,116,0.72) 100%),
+      url("../banner.png") center/cover no-repeat;
+    color:#fff;
+    padding:64px 20px 56px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;inset:0;
+    background:radial-gradient(circle at 80% 0%, rgba(255,255,255,0.14), transparent 55%);
+  }
+  .hero-inner{position:relative;z-index:1;}
+  .hero .eyebrow{
+    display:inline-block;
+    font-size:11px;
+    letter-spacing:.14em;
+    padding:6px 12px;
+    border:1px solid rgba(255,255,255,.5);
+    border-radius:999px;
+    margin-bottom:18px;
+    opacity:.9;
+    white-space:nowrap;
+  }
+  .hero h1{
+    font-size:28px;
+    margin:0 0 10px;
+    letter-spacing:0;
+    font-weight:800;
+    word-break:break-word;
+  }
+  .hero .kr{font-size:14.5px;opacity:.85;margin:0 0 20px;font-weight:500;line-height:1.5;}
+  .hero .tagline{
+    font-size:13px;
+    opacity:.92;
+    margin:0;
+    font-weight:500;
+    line-height:1.6;
+  }
+  .hero .slogan{
+    margin-top:24px;
+    font-size:19px;
+    font-weight:700;
+    letter-spacing:0;
+  }
+  @media(max-width:480px){
+    .hero{padding:48px 16px 42px;}
+    .hero h1{font-size:24px;}
+    .hero .kr{font-size:13.5px;}
+    .hero .tagline{font-size:12.5px;}
+    .hero .slogan{font-size:17px;}
+  }
+
+  /* ---------- NAV ---------- */
+  .subnav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,248,243,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .subnav .wrap{
+    display:flex;gap:6px;overflow-x:auto;
+    padding:10px 20px;
+    scrollbar-width:none;
+  }
+  .subnav .wrap::-webkit-scrollbar{display:none;}
+  .subnav a{
+    flex:none;
+    font-size:13px;
+    font-weight:600;
+    color:var(--ink-soft);
+    background:transparent;
+    padding:8px 14px;
+    border-radius:999px;
+    text-decoration:none;
+    white-space:nowrap;
+    transition:all .15s;
+  }
+  .subnav a:hover, .subnav a.active{
+    background:var(--sage);
+    color:#fff;
+  }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:52px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .section-head{margin-bottom:26px;}
+  .section-tag{
+    font-size:11.5px;
+    font-weight:700;
+    color:var(--sage);
+    letter-spacing:.1em;
+    margin-bottom:8px;
+  }
+  .section-title{
+    font-size:21px;
+    font-weight:800;
+    margin:0;
+    color:var(--ink);
+    line-height:1.4;
+  }
+  .section-desc{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-top:8px;
+    line-height:1.65;
+  }
+  @media(max-width:480px){
+    .section-title{font-size:19px;}
+    .section-desc{font-size:13px;}
+  }
+
+  /* ---------- ABOUT ---------- */
+  .brand-concept{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 24px;
+    box-shadow:var(--shadow);
+    margin-bottom:20px;
+  }
+  .brand-concept .word{
+    font-size:13px;font-weight:700;color:var(--sage-dark);
+    letter-spacing:.05em;
+  }
+  .brand-concept h3{
+    font-size:19px;margin:8px 0 12px;font-weight:800;
+  }
+  .brand-concept p{font-size:14px;color:var(--ink-soft);margin:0;}
+
+  /* ---------- INFO TABLE ---------- */
+  .info-table{
+    width:100%;border-collapse:collapse;
+    background:var(--paper);
+    border-radius:14px;overflow:hidden;
+    border:1px solid var(--line);
+    font-size:14px;
+    box-shadow:var(--shadow);
+  }
+  .info-table tr:not(:last-child) td, .info-table tr:not(:last-child) th{border-bottom:1px solid var(--line);}
+  .info-table th{
+    background:var(--sage-light);
+    color:var(--sage-dark);
+    text-align:left;
+    padding:12px 16px;
+    width:118px;
+    font-weight:700;
+    vertical-align:top;
+    line-height:1.4;
+  }
+  .info-table td{padding:12px 16px;color:var(--ink);line-height:1.55;}
+  @media(max-width:480px){
+    .info-table{font-size:12.8px;}
+    .info-table th{width:88px;padding:10px 10px;}
+    .info-table td{padding:10px 10px;}
+  }
+  .warn-inline{color:#b3552f;font-weight:600;font-size:13px;}
+
+  /* ---------- PRODUCT PHOTOS ---------- */
+  .product-photos{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;
+    margin-top:20px;
+  }
+  .product-photos img{
+    width:100%;aspect-ratio:3/4;object-fit:cover;
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    background:#fff;
+  }
+  .photo-note{
+    text-align:center;font-size:12.5px;color:var(--ink-soft);
+    margin-top:10px;font-weight:600;
+  }
+
+  /* ---------- PRODUCT CARDS ---------- */
+  .product-grid{
+    display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px;
+  }
+  @media(min-width:640px){.product-grid{grid-template-columns:1fr 1fr;}}
+  .product-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:var(--shadow);
+  }
+  .product-card .sku-tag{
+    font-size:11px;font-weight:800;letter-spacing:.08em;
+    color:var(--sage-dark);background:var(--sage-light);
+    display:inline-block;padding:4px 10px;border-radius:999px;margin-bottom:10px;
+  }
+  .product-card h4{margin:0 0 2px;font-size:17px;font-weight:800;}
+  .product-card .eng{font-size:12px;color:var(--ink-soft);margin-bottom:14px;}
+  .product-card dl{margin:0;font-size:13px;}
+  .product-card dt{color:var(--ink-soft);font-weight:700;margin-top:10px;}
+  .product-card dd{margin:2px 0 0;color:var(--ink);}
+  .product-card .keywords{
+    display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;
+  }
+  .product-card .keywords span{
+    background:var(--sage-light);color:var(--sage-dark);
+    font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:999px;
+  }
+
+  /* ---------- STEP 3 ---------- */
+  .step3{
+    display:grid;grid-template-columns:1fr;gap:10px;margin-top:18px;
+  }
+  @media(min-width:640px){.step3{grid-template-columns:repeat(3,1fr);}}
+  .step3 .card{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:14px;padding:18px;text-align:center;
+  }
+  .step3 .num{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--sage);color:#fff;font-weight:800;font-size:14px;
+    display:flex;align-items:center;justify-content:center;margin:0 auto 10px;
+  }
+  .step3 .card p{font-size:13px;margin:0;color:var(--ink-soft);}
+
+  .caution-box{
+    margin-top:18px;
+    background:var(--amber);
+    border:1px solid var(--amber-line);
+    border-radius:14px;
+    padding:16px 18px;
+    font-size:13px;
+    color:#6b4b1c;
+  }
+  .caution-box .title{font-weight:800;margin-bottom:8px;display:block;}
+  .caution-box ul{margin:0;padding-left:18px;}
+  .caution-box li{margin-bottom:5px;}
+
+  /* ---------- KEY MESSAGE ---------- */
+  .keymsg{display:grid;grid-template-columns:1fr;gap:12px;}
+  .keymsg .item{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:14px;padding:16px 18px;
+    display:flex;gap:14px;box-shadow:var(--shadow);
+  }
+  .keymsg .idx{
+    flex:none;width:30px;height:30px;border-radius:50%;
+    background:var(--sage-dark);color:#fff;font-weight:800;font-size:13px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .keymsg .msg{font-weight:800;font-size:14.5px;margin-bottom:4px;}
+  .keymsg .direction{font-size:13px;color:var(--ink-soft);}
+
+  /* ---------- REELS TIMELINE ---------- */
+  .timeline{
+    display:flex;flex-direction:column;gap:0;margin-top:18px;
+    border-radius:var(--radius);overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+  .tl-row{
+    display:grid;grid-template-columns:74px 1fr;
+    background:var(--paper);
+  }
+  .tl-row:not(:last-child){border-bottom:1px solid var(--line);}
+  .tl-time{
+    background:var(--sage-light);color:var(--sage-dark);
+    font-size:12px;font-weight:800;line-height:1.4;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:14px 6px;
+  }
+  .tl-body{padding:14px 16px;}
+  .tl-body .label{font-size:12.5px;font-weight:800;color:var(--sage-dark);margin-bottom:4px;}
+  .tl-body .line{font-size:13.5px;color:var(--ink);line-height:1.6;}
+  @media(max-width:480px){
+    .tl-row{grid-template-columns:58px 1fr;}
+    .tl-time{font-size:10.5px;padding:12px 4px;}
+    .tl-body{padding:12px 12px;}
+    .tl-body .line{font-size:12.8px;}
+  }
+  .tl-body .sub{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+
+  /* ---------- ACCORDION ---------- */
+  .accordion{margin-top:24px;}
+  .acc-item{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    margin-bottom:10px;
+    overflow:hidden;
+  }
+  .acc-head{
+    width:100%;
+    display:flex;align-items:center;gap:12px;
+    padding:16px 18px;
+    background:none;border:none;cursor:pointer;
+    font-family:inherit;text-align:left;
+  }
+  .acc-head .no{
+    flex:none;width:26px;height:26px;border-radius:8px;
+    background:var(--sage-light);color:var(--sage-dark);
+    font-size:12px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .acc-head .t{font-size:15px;font-weight:800;flex:1;}
+  .acc-head .chev{
+    font-size:13px;color:var(--ink-soft);
+    transition:transform .2s;flex:none;
+  }
+  .acc-item.open .acc-head .chev{transform:rotate(180deg);}
+  .acc-panel{
+    max-height:0;overflow:hidden;
+    transition:max-height .28s ease;
+  }
+  .acc-panel-inner{padding:0 18px 20px;font-size:13.5px;color:var(--ink);}
+  .acc-panel-inner h5{font-size:13.5px;margin:16px 0 8px;color:var(--sage-dark);font-weight:800;}
+  .acc-panel-inner h5:first-child{margin-top:0;}
+
+  .mini-table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0 4px;table-layout:fixed;}
+  .mini-table th{
+    background:var(--sage-light);color:var(--sage-dark);
+    text-align:left;padding:9px 10px;font-weight:700;
+  }
+  .mini-table td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.55;}
+  .mini-table tr:last-child td{border-bottom:none;}
+  @media(max-width:480px){
+    .mini-table{font-size:12.3px;}
+    .mini-table td:first-child{width:78px !important;padding-right:6px;}
+    .mini-table td, .mini-table th{padding:8px 6px;}
+  }
+
+  .tag-list{list-style:none;margin:6px 0;padding:0;}
+  .tag-list li{
+    padding:8px 0 8px 18px;position:relative;font-size:13.5px;
+    border-bottom:1px dashed var(--line);
+  }
+  .tag-list li:last-child{border-bottom:none;}
+  .tag-list li::before{
+    content:"·";position:absolute;left:0;color:var(--sage);font-weight:900;
+  }
+
+  .must-avoid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:6px;}
+  @media(min-width:560px){.must-avoid{grid-template-columns:1fr 1fr;}}
+  .ma-box{border-radius:12px;padding:14px 16px;}
+  .ma-box.must{background:var(--sage-light);}
+  .ma-box.avoid{background:var(--rose);}
+  .ma-box .h{font-size:13px;font-weight:800;margin-bottom:8px;}
+  .ma-box.must .h{color:var(--sage-dark);}
+  .ma-box.avoid .h{color:#a2402a;}
+  .ma-box ul{margin:0;padding-left:16px;font-size:12.8px;}
+  .ma-box li{margin-bottom:6px;}
+
+  .no-word{
+    display:inline-block;font-size:11.5px;font-weight:800;
+    color:#a2402a;background:var(--rose);
+    padding:2px 8px;border-radius:6px;
+  }
+
+  .hashtag-groups{display:flex;flex-direction:column;gap:14px;margin-top:8px;}
+  .hg-label{font-size:12.5px;font-weight:800;color:var(--ink-soft);margin-bottom:6px;}
+  .hg-tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .hg-tags span{
+    font-size:12.5px;font-weight:700;color:var(--sage-dark);
+    background:var(--sage-light);padding:5px 10px;border-radius:999px;
+  }
+
+  .ad-phrase{
+    background:var(--sage-light);border-radius:10px;
+    padding:12px 14px;font-size:13px;font-weight:700;color:var(--sage-dark);
+    margin:6px 0;
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process{
+    display:grid;grid-template-columns:1fr;gap:0;margin-top:20px;
+  }
+  @media(min-width:640px){.process{grid-template-columns:repeat(4,1fr);}}
+  .process .p-item{
+    background:var(--paper);border:1px solid var(--line);
+    padding:18px 16px;position:relative;text-align:center;
+  }
+  @media(min-width:640px){
+    .process .p-item:not(:last-child){border-right:none;}
+    .process .p-item:first-child{border-radius:14px 0 0 14px;}
+    .process .p-item:last-child{border-radius:0 14px 14px 0;}
+  }
+  @media(max-width:639px){
+    .process .p-item:not(:last-child){border-bottom:none;}
+    .process .p-item:first-child{border-radius:14px 14px 0 0;}
+    .process .p-item:last-child{border-radius:0 0 14px 14px;}
+  }
+  .process .p-num{
+    width:28px;height:28px;border-radius:50%;background:var(--sage);
+    color:#fff;font-weight:800;font-size:13px;
+    display:flex;align-items:center;justify-content:center;margin:0 auto 10px;
+  }
+  .process .p-item p{font-size:12.8px;margin:0;color:var(--ink-soft);}
+  .process-note{font-size:12.5px;color:var(--ink-soft);margin-top:10px;}
+
+  /* ---------- CHECKLIST ---------- */
+  .checklist{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:var(--radius);padding:8px;box-shadow:var(--shadow);margin-top:18px;
+  }
+  .check-item{
+    display:flex;align-items:flex-start;gap:12px;
+    padding:14px 12px;border-bottom:1px solid var(--line);
+  }
+  .check-item:last-child{border-bottom:none;}
+  .check-item input{
+    margin-top:2px;width:19px;height:19px;accent-color:var(--sage-dark);flex:none;cursor:pointer;
+  }
+  .check-item label{font-size:13.8px;cursor:pointer;}
+  .checklist-progress{
+    display:flex;align-items:center;justify-content:space-between;
+    margin-top:14px;font-size:13px;color:var(--ink-soft);font-weight:700;
+  }
+  .bar-track{flex:1;height:8px;background:var(--line);border-radius:999px;margin:0 12px;overflow:hidden;}
+  .bar-fill{height:100%;width:0%;background:var(--sage);transition:width .25s;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--sage-dark);color:#fff;
+    padding:40px 20px 30px;text-align:center;
+  }
+  footer .slogan{font-size:16px;font-weight:800;margin-bottom:6px;}
+  footer .eng{font-size:12px;opacity:.75;}
+
+  .badge-must{
+    display:inline-block;font-size:11px;font-weight:800;color:#a2402a;
+    background:var(--rose);padding:2px 8px;border-radius:999px;margin-left:6px;
+    vertical-align:middle;
+  }
+
+  /* ---------- APPLICATION FORM ---------- */
+  .apply-form{margin-top:20px;}
+  .apply-form .field{margin-bottom:18px;}
+  .apply-form label{
+    display:block;font-size:13.5px;font-weight:800;color:var(--ink);
+    margin-bottom:8px;
+  }
+  .apply-form label .req{color:#c0392b;margin-left:2px;}
+  .apply-form label .optional{color:var(--ink-soft);font-weight:600;font-size:12px;}
+  .apply-form input[type="text"],
+  .apply-form input[type="tel"],
+  .apply-form input[type="email"],
+  .apply-form textarea{
+    width:100%;padding:13px 14px;font-size:14.5px;
+    border:1px solid var(--line);border-radius:12px;
+    font-family:inherit;color:var(--ink);background:var(--paper);
+    outline:none;
+  }
+  .apply-form input:focus, .apply-form textarea:focus{border-color:var(--sage);}
+  .apply-form input[readonly]{background:var(--sage-light);color:var(--ink);}
+  .apply-form textarea{resize:vertical;line-height:1.55;}
+  .zip-row{display:flex;gap:8px;}
+  .zip-row input{flex:1;min-width:0;}
+  .zip-row button{
+    flex:none;padding:0 16px;border:none;border-radius:12px;
+    background:var(--sage-dark);color:#fff;font-weight:700;font-size:13.5px;
+    cursor:pointer;font-family:inherit;white-space:nowrap;
+  }
+  .zip-row button:active{background:var(--sage);}
+
+  .week-select{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  @media(max-width:480px){.week-select{grid-template-columns:1fr 1fr;}}
+  .week-btn{
+    border:1px solid var(--line);background:var(--paper);
+    border-radius:12px;padding:12px 10px;text-align:center;
+    cursor:pointer;font-family:inherit;color:var(--ink-soft);
+    font-size:13px;font-weight:700;line-height:1.5;
+    transition:all .15s;
+  }
+  .week-btn span{display:block;font-size:12px;font-weight:600;margin-top:2px;}
+  .week-btn.active{
+    background:var(--amber);border-color:var(--amber-line);
+    color:#6b4b1c;
+  }
+  .week-btn.active span{color:#8a6a35;}
+
+  .notice-box{
+    background:var(--amber);border:1px solid var(--amber-line);
+    border-radius:14px;padding:14px 16px;font-size:12.8px;
+    color:#6b4b1c;font-weight:600;line-height:1.6;margin-bottom:18px;
+  }
+  .info-dashed{
+    border:1px dashed var(--line);border-radius:14px;
+    padding:14px 16px;margin-bottom:14px;background:var(--paper);
+  }
+  .info-dashed .h{font-size:13.5px;font-weight:800;margin-bottom:8px;}
+  .info-dashed ul{margin:0;padding-left:18px;font-size:12.8px;color:var(--ink-soft);}
+  .info-dashed li{margin-bottom:4px;}
+
+  .agree-row{
+    display:flex;align-items:flex-start;gap:10px;margin:22px 0 10px;cursor:pointer;
+  }
+  .agree-row input{margin-top:3px;width:18px;height:18px;accent-color:var(--sage-dark);flex:none;cursor:pointer;}
+  .agree-row span{font-size:13.5px;font-weight:700;color:var(--ink);}
+  .agree-sub{
+    font-size:12px;color:var(--ink-soft);line-height:1.7;
+    margin:0 0 22px;padding-left:28px;
+  }
+
+  .submit-btn{
+    width:100%;padding:16px;border:none;border-radius:14px;
+    background:var(--sage-dark);color:#fff;font-weight:800;font-size:15px;
+    cursor:pointer;font-family:inherit;
+  }
+  .submit-btn:active{background:var(--sage);}
+  .apply-msg{
+    margin-top:12px;font-size:13px;font-weight:700;text-align:center;
+    min-height:18px;
+  }
+  .apply-msg.error{color:#a2402a;}
+  .apply-msg.success{color:var(--sage-dark);}
+</style>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner wrap">
+    <span class="eyebrow">CREATOR CONTENT GUIDE · D TYPE</span>
+    <h1>RE:NNOCENT LAB</h1>
+    <p class="kr">리노센트랩 클렌징 부스터 크리에이터 콘텐츠 가이드</p>
+    <p class="tagline">리셋 브라이트닝 클렌징 부스터 · 스팟 센시티브 클렌징 부스터</p>
+    <p class="slogan">"다시, 무해하게"</p>
+  </div>
+</div>
+
+<nav class="subnav">
+  <div class="wrap">
+    <a href="#about">브랜드</a>
+    <a href="#campaign">캠페인 개요</a>
+    <a href="#product">제품 &amp; 사용법</a>
+    <a href="#guide">콘텐츠 가이드</a>
+    <a href="#process">진행 절차</a>
+    <a href="#checklist">체크리스트</a>
+    <a href="#apply">캠페인 신청</a>
+  </div>
+</nav>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">ABOUT BRAND</div>
+      <h2 class="section-title">브랜드 소개</h2>
+    </div>
+
+    <div class="brand-concept">
+      <span class="word">RE(다시) + INNOCENT(무해한) + LAB</span>
+      <h3>세안을, 다시 설계하다</h3>
+      <p style="font-weight:700;color:var(--sage-dark);margin-bottom:10px;">올리브영 구강케어 1위 브랜드 '리브러쉬'를 운영하는 주식회사 고차원에서 선보인 클렌징 케어 브랜드 '리노센트랩(Re:Nnocent Lab)'입니다.</p>
+      <p>리노센트랩은 피부를 본연의 무해한 상태로 되돌리는 것을 지향하는 스킨케어 브랜드입니다. 세안을 단순히 씻어내기만 하는 시간이 아니라, 스킨케어의 밀도를 바꾸는 첫 단계의 시작으로 바라봅니다. 뽀득하게 씻어내는 것보다, 세안 직후 피부가 어떤 상태로 남는지를 더 중요하게 생각합니다.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CAMPAIGN -->
+<section id="campaign">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">CAMPAIGN INFO</div>
+      <h2 class="section-title">캠페인 개요</h2>
+    </div>
+
+    <table class="info-table">
+      <tr><th>브랜드</th><td>리노센트랩 (Re:Nnocent Lab)</td></tr>
+      <tr><th>제품</th><td>리셋 브라이트닝 클렌징 부스터 / 스팟 센시티브 클렌징 부스터</td></tr>
+      <tr><th>런칭일</th><td>2026년 10월 19일(월)</td></tr>
+      <tr><th>판매처</th><td>네이버 브랜드스토어, 리노센트랩 공식몰</td></tr>
+      <tr><th>캠페인 목표</th><td>'쓰던 클렌저에 더해 쓰는 부스터'라는 사용 방식과 '스킨케어 0단계' 개념 전달</td></tr>
+      <tr><th>업로드 기간</th><td>[개별 안내] <span class="warn-inline">⚠ 일정 미준수 시 고료 지급 불가</span></td></tr>
+      <tr><th>게시물 유지</th><td>6개월</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section id="product">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">PRODUCT &amp; HOW TO USE</div>
+      <h2 class="section-title">클렌징 부스터란?</h2>
+      <p class="section-desc">평소 사용하는 클렌저에 1~2톡 더해 함께 사용하는 파우더 타입 클렌징 부스터입니다. 클렌저를 대체하는 파우더가 아니므로 기존 클렌저를 바꾸실 필요가 없습니다. 폼·젤·크림 등 클렌저 종류와 관계없이 함께 사용할 수 있으며, 오늘의 피부 컨디션에 맞춰 2 SKU 중 한 종류를 선택해 사용합니다.</p>
+    </div>
+
+    <div class="product-photos">
+      <img src="../product-1.png" alt="리노센트랩 클렌징 부스터 제품 이미지 1">
+      <img src="../product-2.png" alt="리노센트랩 클렌징 부스터 제품 이미지 2">
+    </div>
+    <p class="photo-note">※ 두 제품 중 하나가 랜덤으로 발송됩니다.</p>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <span class="sku-tag">STEP 01 · PORE / TONE</span>
+        <h4>리셋 브라이트닝 클렌징 부스터</h4>
+        <div class="eng">Reset Brightening Cleansing Booster</div>
+        <dl>
+          <dt>이런 날 추천</dt><dd>피부결이 거칠고 푸석하게 느껴지는 날</dd>
+          <dt>핵심 원물</dt><dd>쌀가루 · 작약뿌리</dd>
+          <dt>전달 포인트</dt><dd>세안 후 당김 없이 촉촉하게 톤업 브라이트닝</dd>
+        </dl>
+        <div class="keywords">
+          <span>매끈한 피부결</span><span>촉촉한 마무리</span><span>결광케어</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <span class="sku-tag">STEP 02 · SPOT / TROUBLE</span>
+        <h4>스팟 센시티브 클렌징 부스터</h4>
+        <div class="eng">Spot Sensitive Cleansing Booster</div>
+        <dl>
+          <dt>이런 날 추천</dt><dd>유분기로 번들거리고 피부가 예민하게 느껴지는 날</dd>
+          <dt>핵심 원물</dt><dd>팥가루 · 흰목이버섯</dd>
+          <dt>전달 포인트</dt><dd>세안 후 번들거림 없이 산뜻하게 트러블 케어</dd>
+        </dl>
+        <div class="keywords">
+          <span>매끈한 피부결</span><span>산뜻한 마무리</span><span>스팟케어</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:16px;margin:32px 0 4px;font-weight:800;">사용 방법 · 3-STEP</h3>
+    <div class="step3">
+      <div class="card">
+        <div class="num">1</div>
+        <p>평소 사용하는 클렌저를<br>손바닥에 적당량 덜어줍니다.</p>
+      </div>
+      <div class="card">
+        <div class="num">2</div>
+        <p>클렌저 위에 오늘의 피부에<br>맞는 부스터를 1~2톡 더해줍니다.</p>
+      </div>
+      <div class="card">
+        <div class="num">3</div>
+        <p>충분히 거품을 낸 뒤,<br>약 30초간 부드럽게 세안하고 헹궈냅니다.</p>
+      </div>
+    </div>
+
+    <div class="caution-box">
+      <span class="title">⚠ 촬영 · 사용 시 필수 준수사항</span>
+      <ul>
+        <li>부스터는 반드시 <b>'클렌저와 함께 사용하는 장면'</b>으로 연출해 주세요. 물에만 녹여 단독 사용하는 방식은 제품 설계와 다른 사용법입니다.</li>
+        <li>사용량은 1회 세안 시 1~2톡이 기준이며, 과량 사용 장면은 지양해 주세요.</li>
+        <li>소량의 물과 함께 거품을 충분히 낸 뒤 강하게 문지르지 않고 부드럽게 롤링해 주세요.</li>
+        <li>용기 안으로 물이 들어가지 않도록 마른 손으로 덜어 사용해 주세요.</li>
+        <li>세안 시 눈에 들어가지 않도록 주의해 주세요.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT GUIDE -->
+<section id="guide">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">CONTENT GUIDE</div>
+      <h2 class="section-title">콘텐츠 제작 가이드</h2>
+      <p class="section-desc">아래 3가지 핵심 메시지는 모든 콘텐츠에 빠짐없이 포함해 주세요. 문장은 크리에이터님의 화법으로 자유롭게 변형하셔도 좋습니다.</p>
+    </div>
+
+    <div class="keymsg">
+      <div class="item">
+        <div class="idx">1</div>
+        <div>
+          <div class="msg">클렌저를 바꾸지 마세요, 처방을 더해 보세요</div>
+          <div class="direction">새 클렌저로 교체하는 것이 아니라, 쓰던 클렌저에 부스터를 1~2톡 더해 쓰는 방식</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="idx">2</div>
+        <div>
+          <div class="msg">세안의 밀도를 바꾸는 스킨케어 0단계</div>
+          <div class="direction">올바른 세안 하나로 이후 모든 단계(스킨, 토너, 크림 등) 스킨케어의 밀도가 바뀌는 경험</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="idx">3</div>
+        <div>
+          <div class="msg">오늘의 피부 컨디션에 맞춤 처방</div>
+          <div class="direction">피부 컨디션은 매일 달라지는 만큼, 그날의 피부에 맞춰 부스터를 골라 쓰는 세안</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:16px;margin:32px 0 4px;font-weight:800;">인스타그램 릴스 구성 (권장 20~40초)</h3>
+    <p class="section-desc" style="margin-top:0;">설명란에 광고 표기를 노출해 주시고, 자막 또는 멘트로 제품명을 1회 이상 노출해 주세요.</p>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-time">0~3초<br>문제 제기</div>
+        <div class="tl-body">
+          <div class="line">"토너, 세럼, 크림은 매일 골라 바르면서 클렌저는 왜 매일 똑같은 걸 쓰세요?"</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">3~10초<br>개념 전달</div>
+        <div class="tl-body">
+          <div class="line">"스킨케어가 얼마나 흡수될지는 0단계인 세안에서 정해진대요."</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">10~25초<br>사용 장면</div>
+        <div class="tl-body">
+          <div class="line">쓰던 클렌저 → 부스터 1~2톡 → 거품 → 약 30초 세안</div>
+          <div class="sub">*쓰던 클렌저는 브랜드 로고가 식별되지 않는 각도로 촬영하거나, 손바닥에 덜어낸 상태로 노출해 주세요.</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">25~35초<br>세안 직후</div>
+        <div class="tl-body">
+          <div class="line">손끝으로 피부결 확인, 사용감 한마디, 세안 후 다음 단계 스킨케어 흡수력 체감</div>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">마지막<br>마무리</div>
+        <div class="tl-body">
+          <div class="line">"네이버에서 '리노센트랩' 검색해 보세요."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="accordion">
+
+      <div class="acc-item">
+        <button class="acc-head" type="button">
+          <span class="no">1</span>
+          <span class="t">SKU별 소구 포인트 자세히 보기</span>
+          <span class="chev">⌄</span>
+        </button>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <h5>리셋 브라이트닝 클렌징 부스터</h5>
+            <table class="mini-table">
+              <tr><td style="font-weight:700;width:110px;">소구 축</td><td>묵은 각질을 정돈해 피부결을 매끈하게 다듬는 세안</td></tr>
+              <tr><td style="font-weight:700;">Point 1</td><td>묵은 각질이 정돈되어 세안 후 피부결이 매끈하고 안색이 맑고 투명해짐</td></tr>
+              <tr><td style="font-weight:700;">Point 2</td><td>매끈한 피부결과 촉촉함을 세안 한 번으로 동시에 케어하는 성분 레이어링</td></tr>
+              <tr><td style="font-weight:700;">원물 스토리</td><td>미세 쌀가루가 묵은 각질을 부드럽게 걷어내 유효 성분이 되어갈 길을 열고, 작약뿌리가 세안 중 발생하는 미세 자극을 즉각 진정 및 톤업</td></tr>
+              <tr><td style="font-weight:700;">기능성 성분</td><td>백옥 트리플 톤케어 라인 — 트라넥삼산 · 글루타치온 · 나이아신아마이드</td></tr>
+              <tr><td style="font-weight:700;">추천 상황</td><td>칙칙하고 푸석해 보이는 날</td></tr>
+              <tr><td style="font-weight:700;">콘텐츠 소재</td><td>세안 직후 매끈한 피부결, 다음 스킨케어가 잘 스며드는 느낌 / 스킨케어 단계에서 피부의 흡수력이 높아짐을 느끼는 개인 경험 서술</td></tr>
+            </table>
+
+            <h5>스팟 센시티브 클렌징 부스터</h5>
+            <table class="mini-table">
+              <tr><td style="font-weight:700;width:110px;">소구 축</td><td>진정을 넘어 유분기와 트러블 흔적까지 세안 한 번으로 동시 케어</td></tr>
+              <tr><td style="font-weight:700;">Point 1</td><td>굳은 각질과 유분이 쌓인 자리를 비워내 답답하던 피부를 매끈하고 편안하게</td></tr>
+              <tr><td style="font-weight:700;">Point 2</td><td>트러블이 나는 도중부터 지나간 흔적까지, 자극 없이 세안 한 번으로 동시 케어</td></tr>
+              <tr><td style="font-weight:700;">원물 스토리</td><td>팥가루가 피부 위 굳은 각질과 유분기를 씻어내고, 흰목이버섯이 수분을 끌어당겨 세안 후 피부를 촉촉하게 유지</td></tr>
+              <tr><td style="font-weight:700;">기능성 성분</td><td>스팟 트리플 밸런스 라인 — 나이아신아마이드 · 병풀추출물 (무자극 임상 테스트 완료 0.0%)</td></tr>
+              <tr><td style="font-weight:700;">추천 상황</td><td>유분기로 번들거리는 날 / 피부가 예민하게 느껴지는 날 / 코 주변이 답답하게 느껴지는 날</td></tr>
+              <tr><td style="font-weight:700;">콘텐츠 소재</td><td>세안 후 산뜻함, 코 주변 노폐물이 씻겨 나간 느낌</td></tr>
+            </table>
+
+            <h5>공통 · 참고 문장 (자유롭게 변형 가능)</h5>
+            <ul class="tag-list">
+              <li>"토너, 세럼, 크림은 매일 골라 바르면서 클렌저는 왜 매일 똑같은 걸 쓸까요?"</li>
+              <li>"클렌저를 바꿀 필요 없어요. 쓰던 클렌저에 부스터만 톡."</li>
+              <li>"유난히 예민하고 번들거리는 날엔 스팟 센시티브, 안색이 칙칙하고 푸석한 날엔 리셋 브라이트닝"</li>
+              <li>"부스터 1톡만으로 거품이 더 쫀쫀해지고, 세안 후에 당기지 않아요."</li>
+              <li>"세안 후 바르는 토너와 세럼이 더 잘 스며드는 스잘먹 클렌징"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" type="button">
+          <span class="no">2</span>
+          <span class="t">촬영 가이드 · 필수 / 권장 / 지양 컷</span>
+          <span class="chev">⌄</span>
+        </button>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <h5>필수 컷</h5>
+            <ul class="tag-list">
+              <li>제품 패키지 단독 컷 (제품명 식별 가능)</li>
+              <li>평소 쓰던 클렌저와 부스터를 함께 둔 컷 <span style="color:var(--ink-soft);">(쓰던 클렌저는 브랜드 로고 비노출)</span></li>
+              <li>손바닥 위 클렌저에 부스터 1~2톡 더하는 클로즈업</li>
+              <li>거품을 내는 장면</li>
+              <li>약 30초간 부드럽게 세안하는 장면</li>
+              <li>세안 직후 손끝으로 피부결을 확인하는 클로즈업</li>
+            </ul>
+            <h5>권장 컷</h5>
+            <ul class="tag-list">
+              <li>클렌저 단독 거품과 부스터를 더한 거품의 질감 비교 (동일 사용량 기준)</li>
+              <li>파우더 입자 텍스처 접사</li>
+              <li>세안 후 토너 등 다음 스킨케어를 바르는 장면</li>
+            </ul>
+            <h5>지양 컷</h5>
+            <ul class="tag-list">
+              <li>피부톤을 밝게 보이게 하는 지나친 필터 · 보정</li>
+              <li>병원 · 시술 · 주사 등 의료 환경을 연상시키는 연출</li>
+              <li>부스터를 물에만 녹여 단독 사용하는 장면</li>
+              <li>과량 사용 장면</li>
+              <li>특정 타사 제품과의 우월 비교 장면</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" type="button">
+          <span class="no">3</span>
+          <span class="t">표현 가이드 · Must / Avoid <span class="badge-must">필독</span></span>
+          <span class="chev">⌄</span>
+        </button>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <p style="color:var(--ink-soft);margin-top:0;">본 제품은 일반화장품으로, 화장품 표시 · 광고 관련 법령 및 기준에 따라 아래 표현 기준 준수를 부탁드립니다.</p>
+            <div class="must-avoid">
+              <div class="ma-box must">
+                <div class="h">✓ 권장 표현</div>
+                <ul>
+                  <li>쓰던 클렌저에 1~2톡 / 클렌저를 바꾸지 않아도 되는</li>
+                  <li>스킨케어 0단계 / 스킨케어링 / 다시, 무해하게</li>
+                  <li>묵은 각질을 부드럽게 정돈 / 매끈한 피부결</li>
+                  <li>유분기를 산뜻하게 씻어내는 / 번들거림 없이 산뜻한 마무리</li>
+                  <li>당김 없이 촉촉한 · 편안한 피부 / 다음 스킨케어가 잘 스며드는 느낌</li>
+                  <li>쫀쫀한 거품 / 부드러운 롤링 / 입자가 부드럽게 녹아드는</li>
+                  <li>여드름성 · 트러블성 피부도 자극 없이 케어 가능한 저자극(무자극) 클렌저</li>
+                </ul>
+              </div>
+              <div class="ma-box avoid">
+                <div class="h">✕ 사용 금지 표현</div>
+                <ul>
+                  <li>기미 · 잡티 · 색소침착 · 멜라닌 <span class="no-word">사용불가</span></li>
+                  <li>흉터 · 자국 · 흔적 제거 <span class="no-word">사용불가</span></li>
+                  <li>여드름 개선 · 완화 · 예방 · 치료</li>
+                  <li>피부 장벽 강화 · 복구 · 재생</li>
+                  <li>피부 속 깊이 침투</li>
+                  <li>피부과 시술 / "피부과 안 가도 된다" <span class="no-word">사용불가</span></li>
+                  <li>국내 최초 · 1위 · 최고 <span class="no-word">사용불가</span></li>
+                  <li>특정 브랜드 · 제품과의 비교 · 비방</li>
+                  <li>"한 번 만에 피부가 완전히 달라졌다" 등 효과 단정</li>
+                </ul>
+              </div>
+            </div>
+            <h5>트러블 · 여드름 관련 표현 사용 범위</h5>
+            <ul class="tag-list">
+              <li>여드름 · 트러블을 '개선 · 완화 · 예방 · 치료'한다는 의료적 효능 표현은 사용 금지입니다.</li>
+              <li>단, 민감성 · 여드름성 피부 대상 사용 적합성 임상 테스트를 완료했고 자극 테스트에서 자극도 0.0%(비자극 판정)를 받았으므로, "여드름성 · 트러블성 피부도 자극 없이 케어 가능한 저자극 클렌저"라는 방향의 소구는 가능합니다.</li>
+              <li>#트러블케어 해시태그와 '트러블이 나는 도중부터 지나간 흔적까지 자극 없이 케어'라는 표현은 위 범위 내에서 사용해 주세요.</li>
+            </ul>
+            <h5>수치 · 시험 결과 인용</h5>
+            <ul class="tag-list">
+              <li>임상 · 시험 수치는 임의로 인용하지 않습니다.</li>
+              <li>브랜드가 별도로 전달하는 확정 문구는, 시험 정보(시험기관 · 시험대상 · 시험기간)와 함께 표기하는 경우에 한해 사용 가능합니다.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-head" type="button">
+          <span class="no">4</span>
+          <span class="t">광고 표기 &amp; 해시태그 <span class="badge-must">필수</span></span>
+          <span class="chev">⌄</span>
+        </button>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <p style="color:var(--ink-soft);margin-top:0;">「추천 · 보증 등에 관한 표시 · 광고 심사지침」에 따라, 제품 또는 원고료 등 경제적 대가를 제공받은 콘텐츠는 반드시 광고임을 표기해야 합니다.</p>
+            <h5>표기 문구</h5>
+            <div class="ad-phrase">[광고] 리노센트랩으로부터 제품을 무상으로 제공받아 작성한 콘텐츠입니다.</div>
+            <div class="ad-phrase">[광고] 리노센트랩으로부터 제품과 원고료를 제공받아 작성한 콘텐츠입니다.</div>
+            <h5>채널별 표기 위치</h5>
+            <table class="mini-table">
+              <tr><td style="font-weight:700;width:110px;">인스타그램 릴스</td><td>캡션 첫 줄 / 브랜디드 콘텐츠 계약 시 '유료 파트너십' 레이블 설정</td></tr>
+              <tr><td style="font-weight:700;">인스타그램 피드</td><td>캡션 첫 줄</td></tr>
+              <tr><td style="font-weight:700;">네이버 블로그</td><td>본문 첫 부분</td></tr>
+              <tr><td style="font-weight:700;">유튜브</td><td>더보기란 첫 줄 + '유료 프로모션 포함' 설정</td></tr>
+            </table>
+            <p style="color:var(--ink-soft);font-size:12.5px;">※ 'Thanks to', '체험단', '서포터즈' 등 의미가 모호한 표현만 단독으로 표기하는 방식은 인정되지 않습니다. 소비자가 쉽게 인식할 수 있도록 한글로, 식별 가능한 크기와 색상으로 표기해 주세요.</p>
+
+            <h5>해시태그</h5>
+            <div class="hashtag-groups">
+              <div>
+                <div class="hg-label">공통 필수</div>
+                <div class="hg-tags"><span>#리노센트랩</span><span>#클렌징부스터</span><span>#스킨케어0단계</span></div>
+              </div>
+              <div>
+                <div class="hg-label">제품별 필수 · 리셋 브라이트닝</div>
+                <div class="hg-tags"><span>#브라이트닝</span><span>#피부톤개선</span></div>
+              </div>
+              <div>
+                <div class="hg-label">제품별 필수 · 스팟 센시티브</div>
+                <div class="hg-tags"><span>#모공관리</span><span>#트러블케어</span></div>
+              </div>
+              <div>
+                <div class="hg-label">권장</div>
+                <div class="hg-tags"><span>#스킨케어링</span><span>#클렌저추천</span><span>#저자극클렌저</span><span>#순한클렌징</span><span>#클렌징추천</span><span>#피부결정돈</span><span>#클렌징루틴</span></div>
+              </div>
+              <div>
+                <div class="hg-label">계정 태그 (공동작업자 초대 필수)</div>
+                <div class="hg-tags"><span>@rennocentlab_official</span></div>
+              </div>
+            </div>
+            <p style="color:var(--ink-soft);font-size:12.5px;">· 제품 정식 명칭: 리노센트랩 리셋 브라이트닝 클렌징 부스터 / 리노센트랩 스팟 센시티브 클렌징 부스터<br>· '리노센', '리노센트 랩' 등 오기에 유의해 주세요.<br>· 게시물 업로드 시 '공동 작업자 초대' 기능으로 @rennocentlab_official 을 초대해 주세요. 단순 태그가 아닌 공동작업 요청이어야 브랜드 계정에도 함께 노출됩니다.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">SCHEDULE</div>
+      <h2 class="section-title">진행 절차</h2>
+    </div>
+    <div class="process">
+      <div class="p-item">
+        <div class="p-num">1</div>
+        <p>제품 수령 및<br>수령 확인 회신</p>
+      </div>
+      <div class="p-item">
+        <div class="p-num">2</div>
+        <p>제품 사용<br>(권장 사용 기간 7일 이상)</p>
+      </div>
+      <div class="p-item">
+        <div class="p-num">3</div>
+        <p>안내된 업로드 기한 내<br>콘텐츠 업로드</p>
+      </div>
+      <div class="p-item">
+        <div class="p-num">4</div>
+        <p>게시물 링크 및<br>성과 캡처 공유</p>
+      </div>
+    </div>
+    <p class="process-note">· 콘텐츠 2차 활용 범위는 개별 계약 조건을 따릅니다.</p>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">FINAL CHECK</div>
+      <h2 class="section-title">업로드 전 최종 체크리스트</h2>
+      <p class="section-desc">업로드 전 아래 항목을 확인해 주세요. 체크는 이 화면에서만 기억되는 개인 메모용입니다.</p>
+    </div>
+
+    <div class="checklist" id="checklist-box">
+      <div class="check-item">
+        <input type="checkbox" id="c1"><label for="c1">광고 표기를 채널별 지정 위치에 넣었습니다.</label>
+      </div>
+      <div class="check-item">
+        <input type="checkbox" id="c2"><label for="c2">필수 메시지 3가지(클렌저는 그대로 / 스킨케어 0단계 / 오늘의 피부 컨디션)를 모두 포함했습니다.</label>
+      </div>
+      <div class="check-item">
+        <input type="checkbox" id="c3"><label for="c3">쓰던 클렌저에 부스터 1~2톡을 더하는 장면이 포함되어 있습니다.</label>
+      </div>
+      <div class="check-item">
+        <input type="checkbox" id="c4"><label for="c4">제품 정식 명칭을 정확하게 표기했습니다.</label>
+      </div>
+      <div class="check-item">
+        <input type="checkbox" id="c5"><label for="c5">표현 가이드의 사용 금지 표현 · 금지 해시태그가 포함되어 있지 않습니다.</label>
+      </div>
+      <div class="check-item">
+        <input type="checkbox" id="c6"><label for="c6">피부톤 전후 비교 컷, 피부톤 보정 필터를 사용하지 않았습니다.</label>
+      </div>
+      <div class="check-item">
+        <input type="checkbox" id="c7"><label for="c7">임상 · 시험 수치를 임의로 인용하지 않았습니다.</label>
+      </div>
+      <div class="check-item">
+        <input type="checkbox" id="c8"><label for="c8">필수 해시태그와 계정 태그(@rennocentlab_official)를 넣었습니다.</label>
+      </div>
+    </div>
+
+    <div class="checklist-progress">
+      <span id="progress-text">0 / 8 완료</span>
+      <div class="bar-track"><div class="bar-fill" id="progress-bar"></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- APPLICATION -->
+<section id="apply">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">APPLICATION</div>
+      <h2 class="section-title">캠페인 신청</h2>
+      <p class="section-desc">아래 정보를 입력해 캠페인 참여를 신청해 주세요. Re:Nnocent (리노센트랩)은 10월 4주차(10/19~10/25) · 10월 5주차(10/26~11/1) · 11월 1주차(11/2~11/8) · 11월 2주차(11/9~11/15) 중 참여 가능한 주차를 아래 지원서에서 선택해 주세요.</p>
+    </div>
+
+    <form id="apply-form" class="apply-form" novalidate>
+      <div class="field">
+        <label>Re:Nnocent (리노센트랩) 진행 주차 <span class="req">*</span></label>
+        <p class="section-desc" style="margin:0 0 10px;">10월 4주차(10/19~10/25) · 10월 5주차(10/26~11/1) · 11월 1주차(11/2~11/8) · 11월 2주차(11/9~11/15) 중 참여 가능한 주차 하나를 선택해 주세요.</p>
+        <div class="week-select" id="week-select">
+          <button type="button" class="week-btn active" data-week="10월 4주차(10/19~10/25)">10월 4주차<span>(10/19~10/25)</span></button>
+          <button type="button" class="week-btn" data-week="10월 5주차(10/26~11/1)">10월 5주차<span>(10/26~11/1)</span></button>
+          <button type="button" class="week-btn" data-week="11월 1주차(11/2~11/8)">11월 1주차<span>(11/2~11/8)</span></button>
+          <button type="button" class="week-btn" data-week="11월 2주차(11/9~11/15)">11월 2주차<span>(11/9~11/15)</span></button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-name">이름 <span class="req">*</span></label>
+        <input type="text" id="f-name" placeholder="홍길동" required>
+      </div>
+
+      <div class="field">
+        <label for="f-insta">인스타그램 링크 <span class="req">*</span></label>
+        <input type="text" id="f-insta" placeholder="@username 또는 instagram.com/username" required>
+      </div>
+
+      <div class="field">
+        <label for="f-phone">휴대폰 <span class="req">*</span></label>
+        <input type="tel" id="f-phone" placeholder="010-0000-0000" required>
+      </div>
+
+      <div class="field">
+        <label for="f-email">이메일 <span class="optional">(선택)</span></label>
+        <input type="email" id="f-email" placeholder="name@email.com">
+      </div>
+
+      <div class="field">
+        <label for="f-zip">우편번호 <span class="req">*</span></label>
+        <div class="zip-row">
+          <input type="text" id="f-zip" placeholder="00000" readonly required>
+          <button type="button" id="zip-search-btn">주소 검색</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-addr">배송지 주소 <span class="req">*</span></label>
+        <input type="text" id="f-addr" placeholder="도로명 주소" readonly required>
+      </div>
+
+      <div class="field">
+        <label for="f-addr2">상세 주소 <span class="req">*</span></label>
+        <input type="text" id="f-addr2" placeholder="동·호수 등" required>
+      </div>
+
+      <div class="field">
+        <label for="f-note">요청사항 <span class="optional">(선택)</span></label>
+        <textarea id="f-note" rows="3" placeholder="배송 관련 요청사항을 적어주세요"></textarea>
+      </div>
+
+      <div class="notice-box">
+        ⚠ 배송지는 매 캠페인마다 새로 확인합니다.<br>오배송 방지를 위해 입력값을 다시 한번 체크해 주세요.
+      </div>
+
+      <div class="info-dashed">
+        <div class="h">📌 업로드 · 정산 안내</div>
+        <ul>
+          <li>안내된 업로드 마감일까지 업로드 시 정산이 진행됩니다.</li>
+          <li>정산 자료 제출 후 2주 이내 지급됩니다.</li>
+        </ul>
+      </div>
+
+      <div class="info-dashed">
+        <div class="h">📌 콘텐츠 활용 안내</div>
+        <ul>
+          <li>콘텐츠는 브랜드 계정 내 스토리, 피드에 활용될 수 있습니다.</li>
+          <li>2차 활용에 동의해 주신 분들의 콘텐츠는 리노센트랩 공식 홈페이지, SNS, 플랫폼 등에 활용될 수 있는 점 참고 부탁드립니다.</li>
+        </ul>
+      </div>
+
+      <label class="agree-row">
+        <input type="checkbox" id="f-agree" required>
+        <span>안내된 캠페인별 가이드라인 및 고료 조건을 확인했으며 이에 동의합니다.</span>
+      </label>
+      <p class="agree-sub">
+        제작된 콘텐츠는 브랜드 및 SIRIAI의 2차 활용에 동의합니다.<br><br>
+        (필수) 진행 제품은 브랜드 프로모션 상황에 따라 일부 변경될 수 있습니다.<br><br>
+        [필수] 캠페인 선정 후 개인 변심 및 일방적인 취소는 불가하며, 취소 시 제공된 제품 비용이 발생할 수 있음에 동의합니다.
+      </p>
+
+      <button type="submit" id="apply-submit" class="submit-btn">리노센트랩 캠페인 지원서 제출하기</button>
+      <p class="apply-msg" id="apply-msg"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="slogan">다시, 무해하게</div>
+  <div class="eng">Re:Nnocent Lab</div>
+</footer>
+
+<script>
+  // Accordion
+  document.querySelectorAll('.acc-item').forEach(function(item){
+    var head = item.querySelector('.acc-head');
+    var panel = item.querySelector('.acc-panel');
+    head.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.acc-item.open').forEach(function(openItem){
+        if(openItem !== item){
+          openItem.classList.remove('open');
+          openItem.querySelector('.acc-panel').style.maxHeight = null;
+        }
+      });
+      if(isOpen){
+        item.classList.remove('open');
+        panel.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Checklist progress (per-viewer local memory only)
+  var boxes = document.querySelectorAll('#checklist-box input[type="checkbox"]');
+  var progressText = document.getElementById('progress-text');
+  var progressBar = document.getElementById('progress-bar');
+
+  function loadState(){
+    try{
+      var saved = JSON.parse(localStorage.getItem('rennocent-checklist') || '{}');
+      boxes.forEach(function(b){ if(saved[b.id]) b.checked = true; });
+    }catch(e){}
+  }
+  function saveState(){
+    try{
+      var state = {};
+      boxes.forEach(function(b){ state[b.id] = b.checked; });
+      localStorage.setItem('rennocent-checklist', JSON.stringify(state));
+    }catch(e){}
+  }
+  function updateProgress(){
+    var done = 0;
+    boxes.forEach(function(b){ if(b.checked) done++; });
+    progressText.textContent = done + ' / ' + boxes.length + ' 완료';
+    progressBar.style.width = (done / boxes.length * 100) + '%';
+  }
+  boxes.forEach(function(b){
+    b.addEventListener('change', function(){ saveState(); updateProgress(); });
+  });
+  loadState();
+  updateProgress();
+
+  // Subnav active state
+  var navLinks = document.querySelectorAll('.subnav a');
+  var sections = Array.from(navLinks).map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  window.addEventListener('scroll', function(){
+    var pos = window.scrollY + 90;
+    var current = sections[0];
+    sections.forEach(function(sec){ if(sec && sec.offsetTop <= pos) current = sec; });
+    navLinks.forEach(function(a){
+      a.classList.toggle('active', current && a.getAttribute('href') === '#' + current.id);
+    });
+  });
+</script>
+
+
+<script>
+  // ---------- APPLICATION FORM ----------
+  // TODO: Google Form 준비되면 여기 두 값을 채워주세요.
+  // actionUrl 예시: "https://docs.google.com/forms/d/e/FORM_ID/formResponse"
+  // entries 값은 Google Form 미리보기에서 각 문항의 name="entry.XXXXXXXXX" 값을 그대로 넣으면 됩니다.
+  var GOOGLE_FORM = {
+    actionUrl: "",
+    entries: {
+      guideType: "",
+      week: "",
+      name: "",
+      insta: "",
+      phone: "",
+      email: "",
+      zip: "",
+      addr: "",
+      addr2: "",
+      note: ""
+    }
+  };
+  var GUIDE_TYPE_LABEL = "D Type";
+
+  (function(){
+    var weekBtns = document.querySelectorAll('.week-btn');
+    var selectedWeek = weekBtns.length ? weekBtns[0].getAttribute('data-week') : '';
+    weekBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        weekBtns.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        selectedWeek = btn.getAttribute('data-week');
+      });
+    });
+
+    document.getElementById('zip-search-btn').addEventListener('click', function(){
+      if(typeof daum === 'undefined' || !daum.Postcode){
+        alert('주소 검색 서비스를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.');
+        return;
+      }
+      new daum.Postcode({
+        oncomplete: function(data){
+          document.getElementById('f-zip').value = data.zonecode;
+          document.getElementById('f-addr').value = data.roadAddress || data.jibunAddress;
+          document.getElementById('f-addr2').focus();
+        }
+      }).open();
+    });
+
+    var form = document.getElementById('apply-form');
+    var msg = document.getElementById('apply-msg');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      msg.className = 'apply-msg';
+      msg.textContent = '';
+
+      var name = document.getElementById('f-name').value.trim();
+      var insta = document.getElementById('f-insta').value.trim();
+      var phone = document.getElementById('f-phone').value.trim();
+      var email = document.getElementById('f-email').value.trim();
+      var zip = document.getElementById('f-zip').value.trim();
+      var addr = document.getElementById('f-addr').value.trim();
+      var addr2 = document.getElementById('f-addr2').value.trim();
+      var note = document.getElementById('f-note').value.trim();
+      var agree = document.getElementById('f-agree').checked;
+
+      if(!name || !insta || !phone || !zip || !addr || !addr2){
+        msg.classList.add('error');
+        msg.textContent = '필수 항목(*)을 모두 입력해 주세요.';
+        return;
+      }
+      if(!agree){
+        msg.classList.add('error');
+        msg.textContent = '가이드라인 및 고료 조건 동의가 필요합니다.';
+        return;
+      }
+
+      var payload = {
+        guideType: GUIDE_TYPE_LABEL,
+        week: selectedWeek,
+        name: name, insta: insta, phone: phone, email: email,
+        zip: zip, addr: addr, addr2: addr2, note: note
+      };
+
+      if(!GOOGLE_FORM.actionUrl){
+        msg.classList.add('success');
+        msg.textContent = '입력 내용이 확인되었습니다. (Google Form 연동 준비 중 — 실제 제출은 아직 저장되지 않습니다)';
+        console.log('[apply-form draft submission]', payload);
+        return;
+      }
+
+      var body = new URLSearchParams();
+      Object.keys(GOOGLE_FORM.entries).forEach(function(key){
+        var entryId = GOOGLE_FORM.entries[key];
+        if(entryId){ body.append(entryId, payload[key] || ''); }
+      });
+
+      fetch(GOOGLE_FORM.actionUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString()
+      }).then(function(){
+        msg.classList.add('success');
+        msg.textContent = '신청이 접수되었습니다. 감사합니다!';
+        form.reset();
+        weekBtns.forEach(function(b, i){ b.classList.toggle('active', i === 0); });
+        selectedWeek = weekBtns.length ? weekBtns[0].getAttribute('data-week') : '';
+      }).catch(function(){
+        msg.classList.add('error');
+        msg.textContent = '제출 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.';
+      });
+    });
+  })();
+</script>
+</body>
+</html>
