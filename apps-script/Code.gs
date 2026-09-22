@@ -9,10 +9,12 @@
  *   e.postData.getDataAsString('UTF-8')로 명시적으로 UTF-8 디코딩하도록 변경
  * - setupHeaders() 함수 추가: 실행 한 번으로 시트1 1행에 헤더를 넣어줌
  * - doPost 실행 시 시트가 완전히 비어있으면 헤더를 자동으로 먼저 넣도록 처리
- * - 휴대폰(G열) / 우편번호(I열) 컬럼을 항상 "일반 텍스트" 서식으로 강제 지정.
- *   (숫자로만 이루어진 문자열을 시트가 자동으로 숫자로 인식해 앞자리 0이
- *   사라지는 문제 — 예: "010-1234-5678" -> 하이픈 없이 입력 시 "101234...",
- *   "06035" -> "6035" — 를 방지)
+ * - 휴대폰(G열) / 우편번호(I열) 앞자리 0 소실 방지:
+ *   appendRow는 숫자로만 된 문자열을 자동으로 숫자로 바꿔버려 앞자리 0이
+ *   사라지는 경우가 있어(예: "06035" -> "6035"), 대상 행을 직접 계산해
+ *   해당 셀에 먼저 "일반 텍스트" 서식(setNumberFormat("@"))을 지정하고
+ *   flush()로 확정한 뒤에 값을 쓰도록 변경. 휴대폰은 index.html 쪽에서도
+ *   항상 010-1234-5678 형태(하이픈 포함)로 정규화해서 보내므로 이중으로 방지됨
  * - 중복 제출 방지: 같은 사람(휴대폰+타입구분+주차선택)이 최근 10분 안에
  *   이미 접수된 상태로 다시 요청이 오면 새 행을 추가하지 않고 그대로
  *   성공 응답만 반환 (느린 응답 때문에 사용자가 제출 버튼을 여러 번 눌러도
@@ -119,9 +121,6 @@ function doPost(e) {
       sheet.setFrozenRows(1);
     }
 
-    // 값을 쓰기 전에 반드시 먼저 텍스트 서식을 지정해야 앞자리 0이 보존됩니다.
-    forceTextColumns(sheet);
-
     if (isDuplicateSubmission(sheet, data)) {
       // 이미 접수된 신청입니다. 새 행을 추가하지 않고 성공으로 응답만 합니다.
       return ContentService
@@ -129,20 +128,28 @@ function doPost(e) {
         .setMimeType(ContentService.MimeType.JSON);
     }
 
-    sheet.appendRow([
+    // appendRow는 숫자로만 된 문자열을 자동으로 숫자로 바꿔버려 앞자리 0을
+    // 지워버리는 경우가 있어, 대상 행을 직접 계산해 해당 셀에 먼저
+    // "일반 텍스트" 서식을 지정하고 flush로 확정한 뒤 값을 씁니다.
+    var targetRow = sheet.getLastRow() + 1;
+    sheet.getRange(targetRow, 7).setNumberFormat("@"); // 휴대폰
+    sheet.getRange(targetRow, 9).setNumberFormat("@"); // 우편번호
+    SpreadsheetApp.flush();
+
+    sheet.getRange(targetRow, 1, 1, HEADERS.length).setValues([[
       new Date(),
       data.guideType || "",   // 타입구분 (예: A Type)
       data.feeTier || "",     // 고료구분 (예: 5, 10, ..., 고료조정)
       data.week || "",        // 주차선택 (예: 10월 4주차(10/19~10/25))
       data.name || "",
       data.insta || "",
-      data.phone || "",
+      String(data.phone || ""),
       data.email || "",
-      data.zip || "",
+      String(data.zip || ""),
       data.addr || "",
       data.addr2 || "",
       data.note || ""
-    ]);
+    ]]);
 
     return ContentService
       .createTextOutput(JSON.stringify({ result: "success" }))
