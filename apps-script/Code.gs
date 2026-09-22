@@ -9,6 +9,10 @@
  *   e.postData.getDataAsString('UTF-8')로 명시적으로 UTF-8 디코딩하도록 변경
  * - setupHeaders() 함수 추가: 실행 한 번으로 시트1 1행에 헤더를 넣어줌
  * - doPost 실행 시 시트가 완전히 비어있으면 헤더를 자동으로 먼저 넣도록 처리
+ * - 휴대폰(G열) / 우편번호(I열) 컬럼을 항상 "일반 텍스트" 서식으로 강제 지정.
+ *   (숫자로만 이루어진 문자열을 시트가 자동으로 숫자로 인식해 앞자리 0이
+ *   사라지는 문제 — 예: "010-1234-5678" -> 하이픈 없이 입력 시 "101234...",
+ *   "06035" -> "6035" — 를 방지)
  *
  * 설치 / 재설치 방법
  * 1) 스프레드시트를 열고 상단 메뉴 [확장 프로그램] > [Apps Script] 클릭
@@ -31,12 +35,21 @@ var HEADERS = [
   "우편번호", "주소", "상세주소", "요청사항"
 ];
 
-// Apps Script 편집기에서 이 함수를 한 번 실행하면 시트1 1행에 헤더가 채워집니다.
+// 휴대폰(G열), 우편번호(I열)를 "일반 텍스트" 서식으로 고정해
+// 앞자리 0이 숫자 변환으로 사라지는 것을 방지합니다.
+function forceTextColumns(sheet) {
+  sheet.getRange("G:G").setNumberFormat("@");
+  sheet.getRange("I:I").setNumberFormat("@");
+}
+
+// Apps Script 편집기에서 이 함수를 한 번 실행하면
+// 시트1 1행에 헤더가 채워지고, 휴대폰/우편번호 컬럼이 텍스트 서식으로 고정됩니다.
 function setupHeaders() {
   var ss = SpreadsheetApp.openById(SPREADSHEET_ID);
   var sheet = ss.getSheetByName(SHEET_NAME) || ss.getSheets()[0];
   sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
   sheet.setFrozenRows(1);
+  forceTextColumns(sheet);
 }
 
 function doPost(e) {
@@ -53,6 +66,9 @@ function doPost(e) {
       sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
       sheet.setFrozenRows(1);
     }
+
+    // 값을 쓰기 전에 반드시 먼저 텍스트 서식을 지정해야 앞자리 0이 보존됩니다.
+    forceTextColumns(sheet);
 
     sheet.appendRow([
       new Date(),
