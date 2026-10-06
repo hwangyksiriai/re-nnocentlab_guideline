@@ -140,7 +140,7 @@ function doPost(e) {
       new Date(),
       data.guideType || "",   // 타입구분 (예: A Type)
       data.feeTier || "",     // 고료구분 (예: 5, 10, ..., 고료조정)
-      data.week || "",        // 주차선택 (예: 10월 4주차(10/19~10/25))
+      data.week || "",        // 주차선택 (예: 11월 4주차(11/23~11/29))
       data.name || "",
       data.insta || "",
       String(data.phone || ""),
