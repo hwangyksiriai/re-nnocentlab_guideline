@@ -509,7 +509,7 @@
   }
   .zip-row button:active{background:var(--sage);}
 
-  .week-select{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+  .week-select{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
   .week-btn{
     border:1px solid var(--line);background:var(--paper);
     border-radius:12px;padding:12px 10px;text-align:center;
@@ -1066,19 +1066,18 @@
     <div class="section-head">
       <div class="section-tag">APPLICATION</div>
       <h2 class="section-title">캠페인 신청</h2>
-      <p class="section-desc">아래 정보를 입력해 캠페인 참여를 신청해 주세요. Re:Nnocent (리노센트랩)은 11월 3주차(11/16~11/22) · 11월 4주차(11/23~11/29) · 11월 5주차(11/30~12/6) 중 참여 가능한 주차를 아래 지원서에서 선택해 주세요.</p>
+      <p class="section-desc">아래 정보를 입력해 캠페인 참여를 신청해 주세요. Re:Nnocent (리노센트랩)은 11월 3주차(11/16~11/22) · 11월 4주차(11/23~11/29) 중 참여 가능한 주차를 아래 지원서에서 선택해 주세요.</p>
     </div>
 
     <form id="apply-form" class="apply-form" novalidate>
       <div class="field">
         <label>Re:Nnocent (리노센트랩) 진행 주차 <span class="req">*</span></label>
-        <p class="section-desc" style="margin:0 0 10px;">11월 3주차(11/16~11/22) · 11월 4주차(11/23~11/29) · 11월 5주차(11/30~12/6) 중 참여 가능한 주차 하나를 선택해 주세요.</p>
+        <p class="section-desc" style="margin:0 0 10px;">11월 3주차(11/16~11/22) · 11월 4주차(11/23~11/29) 중 참여 가능한 주차 하나를 선택해 주세요.</p>
         <div class="week-select" id="week-select">
           <button type="button" class="week-btn week-closing" data-week="11월 3주차(11/16~11/22)"><em class="week-badge closing">마감 임박</em>11월 3주차<span>(11/16~11/22)</span><small>선착순 잔여 소수</small></button>
           <button type="button" class="week-btn week-open active" data-week="11월 4주차(11/23~11/29)"><em class="week-badge open">집중 모집</em>11월 4주차<span>(11/23~11/29)</span><small>여유 있음</small></button>
-          <button type="button" class="week-btn week-open" data-week="11월 5주차(11/30~12/6)"><em class="week-badge open">집중 모집</em>11월 5주차<span>(11/30~12/6)</span><small>여유 있음</small></button>
         </div>
-        <p class="week-note">※ 11월 3주차는 선착순 모집이 거의 마감되었습니다. 11월 4·5주차 신청을 적극 권장드립니다.</p>
+        <p class="week-note">※ 11월 3주차는 선착순 모집이 거의 마감되었습니다. 11월 4주차 신청을 적극 권장드립니다.</p>
       </div>
 
       <div class="field">
