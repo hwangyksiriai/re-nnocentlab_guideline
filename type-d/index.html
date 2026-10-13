@@ -591,6 +591,68 @@
     cursor:pointer;font-family:inherit;transition:background .15s;
   }
   .copy-btn.copied{background:var(--sage);}
+
+  /* ---------- BRAND GUIDE (브랜드 제공 촬영 가이드 원문) ---------- */
+  .bg-sub{font-size:16px;margin:32px 0 12px;font-weight:800;}
+  .bg-brand{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:32px 20px 28px;text-align:center;margin-bottom:20px;
+  }
+  .bg-brand .pre{font-size:14px;color:var(--ink);margin:0 0 8px;}
+  .bg-brand .logo{width:220px;max-width:70%;margin:0 auto 22px;}
+  .bg-tree{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 26px;}
+  .bg-tree .en{font-size:22px;font-weight:800;color:#555;line-height:1.2;}
+  .bg-tree .kr{font-size:12.5px;font-weight:700;color:#555;margin-top:2px;}
+  .bg-brand .quote{font-size:15px;font-weight:800;font-style:italic;margin:0 0 10px;}
+  .bg-brand .desc{font-size:13.5px;color:var(--ink-soft);margin:0;}
+  .bg-brand .desc u{color:var(--ink);font-weight:700;}
+  .bg-howto{text-align:center;margin-bottom:8px;}
+  .bg-howto .pre{font-size:14px;margin:0 0 2px;color:var(--ink);}
+  .bg-howto h3{font-size:19px;margin:0 0 16px;font-weight:600;}
+  .bg-howto h3 b{font-weight:800;}
+  .bg-howto-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:left;}
+  .bg-howto-grid img{width:100%;border-radius:12px;aspect-ratio:854/761;object-fit:cover;}
+  .bg-howto-grid p{font-size:12.5px;color:var(--ink-soft);margin:8px 2px 0;line-height:1.55;}
+  .bg-product{
+    display:grid;grid-template-columns:1fr;gap:18px;
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:18px;margin-top:16px;
+  }
+  @media(min-width:640px){.bg-product{grid-template-columns:42% 1fr;align-items:center;padding:22px;}}
+  .bg-product img{width:100%;border-radius:12px;}
+  .bg-product .pre{font-size:13.5px;margin:0 0 2px;color:var(--ink);font-weight:600;}
+  .bg-product h4{font-size:20px;margin:0 0 4px;font-weight:800;}
+  .bg-product .tags{color:#1f6fc5;font-weight:700;font-size:14px;margin:0 0 12px;display:flex;flex-wrap:wrap;gap:2px 8px;}
+  .bg-product .tags span{white-space:nowrap;}
+  .bg-product .story{font-size:14px;margin:0 0 14px;}
+  .bg-product ul{margin:0;padding-left:16px;font-size:13.5px;}
+  .bg-product li{margin-bottom:10px;list-style:square;}
+  .bg-product li .s{display:block;font-size:12px;color:var(--ink-soft);margin-top:2px;}
+  .bg-usp-note{
+    background:#ececec;border-radius:14px;padding:14px 18px;font-size:13.5px;
+    margin:28px 0 16px;display:flex;gap:10px;align-items:flex-start;
+  }
+  .bg-usp-note b{color:#e02020;}
+  .bg-usp{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;}
+  @media(min-width:640px){.bg-usp{grid-template-columns:36% 1fr;}}
+  .bg-usp img{width:100%;border-radius:12px;}
+  .bg-usp .item{margin-bottom:16px;}
+  .bg-usp .item:last-child{margin-bottom:0;}
+  .bg-usp .item h4{font-size:15.5px;margin:0 0 2px;font-weight:800;}
+  .bg-usp .item p{font-size:13px;color:var(--ink-soft);margin:0;}
+  .bg-expr{width:100%;border-collapse:collapse;font-size:13px;margin:6px 0 18px;background:var(--paper);}
+  .bg-expr td{border:1px solid #bbb;padding:10px 12px;vertical-align:middle;}
+  .bg-expr td:first-child{font-weight:700;width:46%;}
+
+  .product-select{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+  .product-btn{
+    border:1px solid var(--line);background:var(--paper);border-radius:12px;
+    padding:10px;cursor:pointer;font-family:inherit;color:var(--ink-soft);
+    font-size:13px;font-weight:700;line-height:1.45;text-align:center;transition:all .15s;
+  }
+  .product-btn img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;margin-bottom:8px;}
+  .product-btn small{display:block;font-size:11.5px;font-weight:600;margin-top:2px;}
+  .product-btn.active{background:var(--amber);border-color:var(--amber-line);color:#6b4b1c;box-shadow:0 0 0 2px var(--amber-line) inset;}
 </style>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
@@ -601,7 +663,7 @@
     <span class="eyebrow">CREATOR CONTENT GUIDE · D TYPE</span>
     <h1>RE:NNOCENT LAB</h1>
     <p class="kr">리노센트랩 클렌징 부스터 크리에이터 콘텐츠 가이드</p>
-    <p class="tagline">리셋 브라이트닝 클렌징 부스터 · 스팟 센시티브 클렌징 부스터</p>
+    <p class="tagline">리셋 브라이트닝 클렌징 부스터 · 포인트 센시티브 클렌징 부스터</p>
     <p class="slogan">"다시, 무해하게"</p>
   </div>
 </div>
@@ -627,6 +689,18 @@
       <h2 class="section-title">브랜드 소개</h2>
     </div>
 
+    <div class="bg-brand">
+      <p class="pre">다시 무해하게</p>
+      <img class="logo" src="../brand-logo.png" alt="Re:Nnocent Lab">
+      <div class="bg-tree">
+        <div><div class="en">Re</div><div class="kr">다시 회복하다</div></div>
+        <div><div class="en">Innocent</div><div class="kr">무해한 피부로</div></div>
+        <div><div class="en">Lab</div><div class="kr">메디컬사이언스 설계</div></div>
+      </div>
+      <p class="quote">“피부 고민이 발생한 이후가 아니라, 손상되기 전부터 관리할 수는 없을까?”</p>
+      <p class="desc">리노센트랩은 “예뻐 보이게 만드는” 뷰티 브랜드가 아니라,<br>피부가 무너지기 전에 <u>매일의 루틴에서 먼저 관리하는 피부 예방케어 브랜드</u>입니다.</p>
+    </div>
+
     <div class="brand-concept">
       <span class="word">RE(다시) + INNOCENT(무해한) + LAB</span>
       <h3>세안을, 다시 설계하다</h3>
@@ -647,7 +721,7 @@
 
     <table class="info-table">
       <tr><th>브랜드</th><td>리노센트랩 (Re:Nnocent Lab)</td></tr>
-      <tr><th>제품</th><td>리셋 브라이트닝 클렌징 부스터 / 스팟 센시티브 클렌징 부스터</td></tr>
+      <tr><th>제품</th><td>리셋 브라이트닝 클렌징 부스터 / 포인트 센시티브 클렌징 부스터</td></tr>
       <tr><th>런칭일</th><td>2026년 10월 26일(월)</td></tr>
       <tr><th>판매처</th><td>네이버 브랜드스토어, 리노센트랩 공식몰</td></tr>
       <tr><th>캠페인 목표</th><td>'쓰던 클렌저에 더해 쓰는 부스터'라는 사용 방식과 '스킨케어 0단계' 개념 전달</td></tr>
@@ -669,11 +743,51 @@
       <p class="section-desc">평소 사용하는 클렌저에 1~2톡 더해 함께 사용하는 파우더 타입 클렌징 부스터입니다. 클렌저를 대체하는 파우더가 아니므로 기존 클렌저를 바꾸실 필요가 없습니다. 폼·젤·크림 등 클렌저 종류와 관계없이 함께 사용할 수 있으며, 오늘의 피부 컨디션에 맞춰 2 SKU 중 한 종류를 선택해 사용합니다.</p>
     </div>
 
-    <div class="product-photos">
-      <img src="../product-1.png" alt="리노센트랩 클렌징 부스터 제품 이미지 1">
-      <img src="../product-2.png" alt="리노센트랩 클렌징 부스터 제품 이미지 2">
+    <div class="bg-howto">
+      <p class="pre">내 피부 컨디션에 맞춰서, 필요할 때 쓰던 클렌저에 톡톡!</p>
+      <h3>기존 클렌저에 섞어서 사용하는 <b>피부 고민별 클렌징 부스터</b></h3>
+      <div class="bg-howto-grid">
+        <div>
+          <img src="../howto-1.jpg" alt="폼클렌징을 손바닥에 덜어내는 장면">
+          <p>① 기존에 사용하시던 폼클렌징을 적당량 덜어주세요</p>
+        </div>
+        <div>
+          <img src="../howto-2.jpg" alt="클렌징 부스터를 클렌징폼 위에 뿌리는 장면">
+          <p>② 클렌징 부스터를 클렌징폼 위에 톡 뿌려주세요<br>③ 소량의 물과 함께 섞어서 세안해주세요</p>
+        </div>
+      </div>
     </div>
-    <p class="photo-note">※ 두 제품 중 하나가 랜덤으로 발송됩니다.</p>
+
+    <div class="bg-product">
+      <img src="../product-brightening.jpg" alt="리셋 브라이트닝 클렌징 부스터">
+      <div>
+        <p class="pre">피부가 칙칙할 때? 쓰던 클렌저 그대로 부스터만 톡톡</p>
+        <h4>리셋 브라이트닝 클렌징 부스터</h4>
+        <p class="tags"><span>#브라이트닝</span> <span>#화잘먹클렌징</span> <span>#스킨케어0단계</span></p>
+        <p class="story"><b>쌀가루</b>가 묵은 각질과 피부결을 부드럽게 정돈하여 유효성분이 들어갈 길을 열고<br><b>작약뿌리</b>가 피부 컨디션을 다시 맑게 브라이트닝 정돈</p>
+        <ul>
+          <li>[부스터] 피부 컨디션은 매일 다른데, 클렌저는? 쓰던 클렌저에 그대로 톡톡!<span class="s">클렌징 바꾸지 마세요! 피부 컨디션에 맞춰, 필요할 때만 톡톡 가볍게 더해쓰는 부스터</span></li>
+          <li>[고기능·저자극] 브라이트닝과 진정 효과를 극대화하는 과학적인 원물 함량<span class="s">작약뿌리 200,000ppm, 쌀가루 100,000ppm, 나이아신아마이드 50,000ppm<br>트라넥삼산 5,000ppm, 알란토인 2,000ppm, 글루타치온 1,000ppm<br>외 비오틴, 락토바실러스발효추출물 등 함유</span></li>
+          <li>[임상] 단 1회 사용만으로 피부 맑기, 민낯 안색 개선, 후속 스킨케어 흡수율 증가<span class="s">+ 임상 만족도 100%, 보습 개선, 비자극</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-product">
+      <img src="../product-point.jpg" alt="포인트 센시티브 클렌징 부스터">
+      <div>
+        <p class="pre">트러블 흔적이 신경쓰일 때? 쓰던 클렌저 그대로 부스터만 톡톡</p>
+        <h4>포인트 센시티브 클렌징 부스터</h4>
+        <p class="tags"><span>#트러블흔적</span> <span>#색소침착예방</span> <span>#저자극클렌징</span> <span>#스킨케어0단계</span></p>
+        <p class="story"><b>팥가루</b>가 과잉 피지와 모공 속 노폐물 세정을<br><b>흰목이버섯</b>이 세안 중 마찰을 줄이고, 촉촉한 수분막으로 피부 장벽 회복</p>
+        <ul>
+          <li>[부스터] 피부 컨디션은 매일 다른데, 클렌저는? 쓰던 클렌저에 그대로 톡톡!<span class="s">클렌징 바꾸지 마세요! 피부 컨디션에 맞춰, 필요할 때만 톡톡 가볍게 더해쓰는 부스터</span></li>
+          <li>[고기능·저자극] 피지 밸런스를 잡고 피부 장벽을 개선하는 과학적인 원물 함량<span class="s">팥가루 300,000ppm, 나이아신아마이드 30,000ppm<br>트라넥삼산 5,000ppm, 판테놀 5,000ppm , 칼라민 5,000pp<br>외 살리실릭애씨드, 알란토인, 석신산, 파파인, 마데카식애씨드, 병풀추출물, 흰목이버섯추출물 등 함유</span></li>
+          <li>[임상] 평균 피지량 감소, 블랙/화이트헤드 면적 감소, 피부 장벽 개선<span class="s">+ 임상 만족도 100%, 보습 개선, 비자극</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="photo-note">※ 캠페인 신청 시 두 제품 중 진행할 제품 하나를 선택해 주세요.</p>
 
     <div class="product-grid">
       <div class="product-card">
@@ -692,8 +806,8 @@
 
       <div class="product-card">
         <span class="sku-tag">STEP 02 · SPOT / TROUBLE</span>
-        <h4>스팟 센시티브 클렌징 부스터</h4>
-        <div class="eng">Spot Sensitive Cleansing Booster</div>
+        <h4>포인트 센시티브 클렌징 부스터</h4>
+        <div class="eng">Point Sensitive Cleansing Booster</div>
         <dl>
           <dt>이런 날 추천</dt><dd>유분기로 번들거리고 피부가 예민하게 느껴지는 날</dd>
           <dt>핵심 원물</dt><dd>팥가루 · 흰목이버섯</dd>
@@ -767,6 +881,33 @@
       </div>
     </div>
 
+    <h3 class="bg-sub">핵심 USP 및 콘텐츠 가이드</h3>
+    <div class="bg-usp-note">
+      <span>💡</span>
+      <span>USP 및 가이드를 참고하시되, <b>제품을 사용하시면서 느낀점 중심으로 자유롭게 콘텐츠 기획/제작</b> 부탁드립니다</span>
+    </div>
+    <div class="bg-usp">
+      <img src="../usp-model.jpg" alt="클렌징 부스터로 세안하는 모델">
+      <div>
+        <div class="item">
+          <h4>① 피부 컨디션은 매일 다른데, 클렌저는 그대로?</h4>
+          <p>피부 컨디션에 따라서 스킨케어를 다르게 하는데? 클렌징은 매일 그대로?<br>이제는 클렌징 부스터로 내 피부 컨디션에 맞춰서 톡톡</p>
+        </div>
+        <div class="item">
+          <h4>② 클렌징 부스터로 더하는, 스킨케어 0단계</h4>
+          <p>스킨케어 1단계는 토너! 그럼 클렌징은? 클렌징부스터는 스킨케어 0단계</p>
+        </div>
+        <div class="item">
+          <h4>③ 세안의 밀도를 채우세요!</h4>
+          <p>클렌징은 단순히 씻어내기만 하는것? 30초의 세안과정에서 유효성분이 피부로 흡수!</p>
+        </div>
+        <div class="item">
+          <h4>④ 저자극·고효능 클렌징 부스터</h4>
+          <p>임상으로 증명된 효과, 자극은 줄이고 효능은 극대화! 내 피부 고민을 미리 예방하세요</p>
+        </div>
+      </div>
+    </div>
+
     <h3 style="font-size:16px;margin:32px 0 4px;font-weight:800;">인스타그램 릴스 구성 (권장 20~40초)</h3>
     <p class="section-desc" style="margin-top:0;">설명란에 광고 표기를 노출해 주시고, 자막 또는 멘트로 제품명을 1회 이상 노출해 주세요.</p>
     <div class="timeline">
@@ -824,7 +965,7 @@
               <tr><td style="font-weight:700;">콘텐츠 소재</td><td>세안 직후 매끈한 피부결, 다음 스킨케어가 잘 스며드는 느낌 / 스킨케어 단계에서 피부의 흡수력이 높아짐을 느끼는 개인 경험 서술</td></tr>
             </table>
 
-            <h5>스팟 센시티브 클렌징 부스터</h5>
+            <h5>포인트 센시티브 클렌징 부스터</h5>
             <table class="mini-table">
               <tr><td style="font-weight:700;width:110px;">소구 축</td><td>진정을 넘어 유분기와 트러블 흔적까지 세안 한 번으로 동시 케어</td></tr>
               <tr><td style="font-weight:700;">Point 1</td><td>굳은 각질과 유분이 쌓인 자리를 비워내 답답하던 피부를 매끈하고 편안하게</td></tr>
@@ -839,7 +980,7 @@
             <ul class="tag-list">
               <li>"토너, 세럼, 크림은 매일 골라 바르면서 클렌저는 왜 매일 똑같은 걸 쓸까요?"</li>
               <li>"클렌저를 바꿀 필요 없어요. 쓰던 클렌저에 부스터만 톡."</li>
-              <li>"유난히 예민하고 번들거리는 날엔 스팟 센시티브, 안색이 칙칙하고 푸석한 날엔 리셋 브라이트닝"</li>
+              <li>"유난히 예민하고 번들거리는 날엔 포인트 센시티브, 안색이 칙칙하고 푸석한 날엔 리셋 브라이트닝"</li>
               <li>"부스터 1톡만으로 거품이 더 쫀쫀해지고, 세안 후에 당기지 않아요."</li>
               <li>"세안 후 바르는 토너와 세럼이 더 잘 스며드는 스잘먹 클렌징"</li>
             </ul>
@@ -890,6 +1031,18 @@
         </button>
         <div class="acc-panel">
           <div class="acc-panel-inner">
+            <h5 style="margin-top:0;">광고 표현 가이드라인</h5>
+            <table class="bg-expr">
+              <tr><td>기미 / 잡티 / 색소침착 / 멜라닌</td><td>사용 불가</td></tr>
+              <tr><td>흉터 / 자국 · 흔적 제거</td><td>사용 불가</td></tr>
+              <tr><td>여드름 개선 · 완화 · 진정 · 예방</td><td>번들거림 없이 산뜻한 세안 / 민감성 피부도 편안한 세안</td></tr>
+              <tr><td>피부 장벽 강화 · 복구 · 재생</td><td>세안 후 당김 없이 촉촉한</td></tr>
+              <tr><td>피부 속 깊이 침투</td><td>다음 스킨케어가 잘 스며드는 느낌</td></tr>
+              <tr><td>피부과 시술 / "피부과 안 가도 된다"</td><td>사용 불가</td></tr>
+              <tr><td>국내 최초 / 1위 / 최고</td><td>사용 불가</td></tr>
+              <tr><td>특정 브랜드 · 제품과의 비교 · 비방</td><td>사용 방식의 차이만 서술 (예: 클렌저를 대체하지 않고 더해 쓰는 방식)</td></tr>
+              <tr><td>"한 번 만에 피부가 완전히 달라졌다"등 효과 단정</td><td>세안 직후 직접 느끼신 사용감 중심으로 서술</td></tr>
+            </table>
             <p style="color:var(--ink-soft);margin-top:0;">본 제품은 일반화장품으로, 화장품 표시 · 광고 관련 법령 및 기준에 따라 아래 표현 기준 준수를 부탁드립니다.</p>
             <div class="must-avoid">
               <div class="ma-box must">
@@ -966,7 +1119,7 @@
                 <div class="hg-tags"><span>#브라이트닝</span><span>#피부톤개선</span></div>
               </div>
               <div>
-                <div class="hg-label">제품별 필수 · 스팟 센시티브</div>
+                <div class="hg-label">제품별 필수 · 포인트 센시티브</div>
                 <div class="hg-tags"><span>#모공관리</span><span>#트러블케어</span></div>
               </div>
               <div>
@@ -978,7 +1131,7 @@
                 <div class="hg-tags"><span>@rennocentlab_official</span></div>
               </div>
             </div>
-            <p style="color:var(--ink-soft);font-size:12.5px;">· 제품 정식 명칭: 리노센트랩 리셋 브라이트닝 클렌징 부스터 / 리노센트랩 스팟 센시티브 클렌징 부스터<br>· '리노센', '리노센트 랩' 등 오기에 유의해 주세요.<br>· 게시물 업로드 시 '공동 작업자 초대' 기능으로 @rennocentlab_official 을 초대해 주세요. 단순 태그가 아닌 공동작업 요청이어야 브랜드 계정에도 함께 노출됩니다.</p>
+            <p style="color:var(--ink-soft);font-size:12.5px;">· 제품 정식 명칭: 리노센트랩 리셋 브라이트닝 클렌징 부스터 / 리노센트랩 포인트 센시티브 클렌징 부스터<br>· '리노센', '리노센트 랩' 등 오기에 유의해 주세요.<br>· 게시물 업로드 시 '공동 작업자 초대' 기능으로 @rennocentlab_official 을 초대해 주세요. 단순 태그가 아닌 공동작업 요청이어야 브랜드 계정에도 함께 노출됩니다.</p>
           </div>
         </div>
       </div>
@@ -1078,6 +1231,15 @@
           <button type="button" class="week-btn week-open active" data-week="11월 4주차(11/23~11/29)"><em class="week-badge open">집중 모집</em>11월 4주차<span>(11/23~11/29)</span><small>여유 있음</small></button>
         </div>
         <p class="week-note">※ 11월 3주차는 선착순 모집이 거의 마감되었습니다. 11월 4주차 신청을 적극 권장드립니다.</p>
+      </div>
+
+      <div class="field">
+        <label>진행 제품 <span class="req">*</span></label>
+        <p class="section-desc" style="margin:0 0 10px;">두 제품 중 진행할 제품 하나를 선택해 주세요.</p>
+        <div class="product-select" id="product-select">
+          <button type="button" class="product-btn" data-product="리셋 브라이트닝 클렌징 부스터"><img src="../product-brightening.jpg" alt="">리셋 브라이트닝<small>클렌징 부스터</small></button>
+          <button type="button" class="product-btn" data-product="포인트 센시티브 클렌징 부스터"><img src="../product-point.jpg" alt="">포인트 센시티브<small>클렌징 부스터</small></button>
+        </div>
       </div>
 
       <div class="field">
@@ -1317,6 +1479,16 @@
       });
     });
 
+    var productBtns = document.querySelectorAll('.product-btn');
+    var selectedProduct = '';
+    productBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        productBtns.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        selectedProduct = btn.getAttribute('data-product');
+      });
+    });
+
     document.getElementById('zip-search-btn').addEventListener('click', function(){
       if(typeof daum === 'undefined' || !daum.Postcode){
         alert('주소 검색 서비스를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.');
@@ -1357,6 +1529,11 @@
         msg.textContent = '필수 항목(*)을 모두 입력해 주세요.';
         return;
       }
+      if(!selectedProduct){
+        msg.classList.add('error');
+        msg.textContent = '진행 제품을 선택해 주세요.';
+        return;
+      }
       if(!agree){
         msg.classList.add('error');
         msg.textContent = '가이드라인 및 고료 조건 동의가 필요합니다.';
@@ -1375,7 +1552,8 @@
         feeTier: FEE_TIER,
         week: selectedWeek,
         name: name, insta: normalizeInstagramLink(insta), phone: normalizePhoneNumber(phone), email: email,
-        zip: zip, addr: addr, addr2: addr2, note: note
+        zip: zip, addr: addr, addr2: addr2, note: note,
+        product: selectedProduct
       };
 
       if(!APPLY_ENDPOINT){
@@ -1402,6 +1580,8 @@
           form.reset();
           weekBtns.forEach(function(b, i){ b.classList.toggle('active', i === defaultWeekIdx); });
           selectedWeek = weekBtns.length ? weekBtns[defaultWeekIdx].getAttribute('data-week') : '';
+          productBtns.forEach(function(b){ b.classList.remove('active'); });
+          selectedProduct = '';
           // 제출 완료 후에는 버튼을 계속 비활성화 상태로 두어 재클릭으로 인한
           // 중복 제출을 막습니다. (다시 신청하려면 새로고침)
         } else {
