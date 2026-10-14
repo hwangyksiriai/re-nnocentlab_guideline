@@ -421,7 +421,7 @@
   .process{
     display:grid;grid-template-columns:1fr;gap:0;margin-top:20px;
   }
-  @media(min-width:640px){.process{grid-template-columns:repeat(4,1fr);}}
+  @media(min-width:640px){.process{grid-template-columns:repeat(5,1fr);}}
   .process .p-item{
     background:var(--paper);border:1px solid var(--line);
     padding:18px 16px;position:relative;text-align:center;
@@ -443,6 +443,22 @@
   }
   .process .p-item p{font-size:12.8px;margin:0;color:var(--ink-soft);}
   .process-note{font-size:12.5px;color:var(--ink-soft);margin-top:10px;}
+  .review-box{
+    margin-top:16px;background:#f6f8f4;border:1.5px dashed #b9c9bb;
+    border-radius:14px;padding:18px 20px;
+  }
+  .review-box .h{font-size:14px;font-weight:800;margin-bottom:10px;color:var(--ink);}
+  .review-box ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink-soft);line-height:1.7;}
+  .review-box li{margin-bottom:4px;}
+  .review-box li b{color:var(--ink);}
+  .review-box .foot{font-size:12px;color:#9aa69c;margin:12px 0 0;}
+  .deadline-box{
+    margin-top:12px;background:#fdfaf3;border:1.5px solid var(--amber-line);
+    border-radius:14px;padding:18px 20px;font-size:13px;color:var(--ink-soft);line-height:1.7;
+  }
+  .deadline-box .h{font-size:14px;font-weight:800;color:var(--ink);margin-bottom:4px;}
+  .deadline-box p{margin:0;}
+  .deadline-box p + p{margin-top:12px;}
 
   /* ---------- CHECKLIST ---------- */
   .checklist{
@@ -1031,14 +1047,34 @@
       </div>
       <div class="p-item">
         <div class="p-num">3</div>
-        <p>안내된 업로드 기한 내<br>콘텐츠 업로드</p>
+        <p>콘텐츠 초안 전달 및 검수<br>(업로드 3일 전까지)</p>
       </div>
       <div class="p-item">
         <div class="p-num">4</div>
+        <p>안내된 업로드 기한 내<br>콘텐츠 업로드</p>
+      </div>
+      <div class="p-item">
+        <div class="p-num">5</div>
         <p>게시물 링크 및<br>성과 캡처 공유</p>
       </div>
     </div>
     <p class="process-note">· 콘텐츠 2차 활용 범위는 개별 계약 조건을 따릅니다.</p>
+
+    <div class="review-box">
+      <div class="h">📌 콘텐츠 초안 전달 및 검수 안내</div>
+      <ul>
+        <li><b>초안 전달:</b> 업로드 예정일 <b>최소 3일 전</b>까지 전달 부탁드립니다.</li>
+        <li><b>사전 검수:</b> 광고 관련 법규 준수 및 정확한 제품 정보 전달을 위해 진행됩니다.</li>
+        <li><b>수정 안내:</b> 검수 과정에서 가이드라인과 상이하거나 광고 표현상 조정이 필요한 경우, 일부 수정이 요청될 수 있습니다.</li>
+      </ul>
+      <p class="foot">※ 원활한 캠페인 진행을 위한 절차이오니 너른 양해와 협조 부탁드립니다.</p>
+    </div>
+
+    <div class="deadline-box">
+      <div class="h">⚠️ 업로드 기한을 반드시 준수해주세요.</div>
+      <p>기간 내 업로드가 이루어지지 않을 경우 고료 지급이 불가합니다.</p>
+      <p>공동작업자 설정 및 콘텐츠 2차 활용에 동의하는 것으로 간주됩니다.</p>
+    </div>
   </div>
 </section>
 
@@ -1052,6 +1088,9 @@
     </div>
 
     <div class="checklist" id="checklist-box">
+      <div class="check-item">
+        <input type="checkbox" id="c9"><label for="c9">업로드 예정일 3일 전까지 초안을 전달하고 검수를 완료했습니다.</label>
+      </div>
       <div class="check-item">
         <input type="checkbox" id="c1"><label for="c1">광고 표기를 채널별 지정 위치에 넣었습니다.</label>
       </div>
@@ -1079,7 +1118,7 @@
     </div>
 
     <div class="checklist-progress">
-      <span id="progress-text">0 / 8 완료</span>
+      <span id="progress-text">0 / 9 완료</span>
       <div class="bar-track"><div class="bar-fill" id="progress-bar"></div></div>
     </div>
   </div>
