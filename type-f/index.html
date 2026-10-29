@@ -660,6 +660,68 @@
   .product-btn img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;margin-bottom:8px;}
   .product-btn small{display:block;font-size:11.5px;font-weight:600;margin-top:2px;}
   .product-btn.active{background:var(--amber);border-color:var(--amber-line);color:#6b4b1c;box-shadow:0 0 0 2px var(--amber-line) inset;}
+
+  /* ---------- READABILITY BOOST ---------- */
+  :root{ --ink-soft:#44534a; --line:#d8d8cb; }
+  body{ font-size:16px; line-height:1.75; }
+  section{ padding:60px 0; }
+  .section-title{ font-size:25px; }
+  .section-tag{ font-size:12px; }
+  .section-desc{ font-size:15px; line-height:1.75; }
+  .info-table{ font-size:15px; }
+  .info-table th, .info-table td{ padding:14px 18px; }
+  .warn-inline{ font-size:14px; }
+  .product-card dl{ font-size:14.5px; }
+  .product-card dt{ font-size:13px; }
+  .product-card .eng{ font-size:13px; }
+  .product-card .keywords span{ font-size:12.5px; }
+  .step3 .card p{ font-size:14.5px; line-height:1.65; }
+  .caution-box{ font-size:14.5px; line-height:1.75; }
+  .caution-box li{ margin-bottom:8px; }
+  .keymsg .msg{ font-size:16px; }
+  .keymsg .direction{ font-size:14.5px; line-height:1.65; }
+  .tl-time{ font-size:13px; }
+  .tl-body .line{ font-size:14.5px; line-height:1.7; }
+  .tl-body .sub{ font-size:13px; }
+  .acc-head .t{ font-size:16px; }
+  .acc-panel-inner{ font-size:14.5px; line-height:1.75; }
+  .acc-panel-inner h5{ font-size:15px; margin:20px 0 10px; }
+  .mini-table{ font-size:14px; }
+  .mini-table td{ padding:11px 10px; }
+  .tag-list li{ font-size:14.5px; padding:10px 0 10px 18px; }
+  .ma-box .h{ font-size:14px; }
+  .ma-box ul{ font-size:14px; line-height:1.65; }
+  .ma-box li{ margin-bottom:8px; }
+  .hg-label{ font-size:13px; }
+  .hg-tags span{ font-size:13.5px; }
+  .ad-phrase{ font-size:14px; }
+  .process .p-item p{ font-size:14px; }
+  .process-note{ font-size:13.5px; }
+  .check-item label{ font-size:15px; }
+  .checklist-progress{ font-size:14px; }
+  .apply-form label{ font-size:14.5px; }
+  .info-dashed ul, .info-dashed .h{ font-size:14px; line-height:1.65; }
+  .agree-row span{ font-size:14px; }
+  .settle-text{ font-size:14.5px; }
+  .bg-brand .desc{ font-size:14.5px; }
+  .bg-howto-grid p{ font-size:13.5px; }
+  .bg-product .pre, .bg-product ul{ font-size:14.5px; }
+  .bg-usp .item p{ font-size:14px; }
+  .bg-expr{ font-size:14px; }
+  .bg-tree .kr{ font-size:13px; }
+  @media(max-width:480px){
+    body{ font-size:15px; }
+    section{ padding:44px 0; }
+    .section-title{ font-size:21px; }
+    .section-desc{ font-size:14px; }
+    .info-table{ font-size:14px; }
+    .info-table th, .info-table td{ padding:12px 10px; }
+    .mini-table{ font-size:13.5px; }
+    .tl-time{ font-size:11.5px; }
+    .tl-body .line{ font-size:14px; }
+    .acc-panel-inner{ font-size:14px; }
+    .tag-list li{ font-size:14px; }
+  }
 </style>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
@@ -1236,13 +1298,6 @@
     </div>
 
     <form id="apply-form" class="apply-form" novalidate>
-      <div class="field">
-        <label>Re:Nnocent (리노센트랩) 업로드 일정</label>
-        <div class="week-select" id="week-select" style="grid-template-columns:1fr;">
-          <button type="button" class="week-btn active" data-week="11/18~11/23 업로드" style="cursor:default;">11월 18일(수) ~ 11월 23일(월)<span>(11/18~11/23)</span></button>
-        </div>
-      </div>
-
       <div class="field">
         <label>진행 제품 <span class="req">*</span></label>
         <p class="section-desc" style="margin:0 0 10px;">두 제품 중 진행할 제품 하나를 선택해 주세요.</p>
